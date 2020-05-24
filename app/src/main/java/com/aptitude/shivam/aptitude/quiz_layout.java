@@ -2,10 +2,14 @@ package com.aptitude.shivam.aptitude;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +21,8 @@ import android.widget.Toast;
 
 import com.aptitude.shivam.aptitude.Model.QuizModel;
 import com.aptitude.shivam.aptitude.Network.DB;
+import com.aptitude.shivam.aptitude.Network.NetworkClient;
+import com.aptitude.shivam.aptitude.Utils.Constants;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -40,6 +46,8 @@ public class quiz_layout extends AppCompatActivity implements View.OnClickListen
     QuizModel quizModel = new QuizModel();
     Map<Integer, Integer> map = new HashMap<>();
     List<String> questionsList = new ArrayList<>();
+
+    NetworkClient.ServerCommunicator communicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +83,8 @@ public class quiz_layout extends AppCompatActivity implements View.OnClickListen
         nextButton.setOnClickListener(this);
         prevButton.setOnClickListener(this);
         submitButton.setOnClickListener(this);
+
+
     }
 
     public void onRadioButtonClicked(View view) {
@@ -177,7 +187,29 @@ public class quiz_layout extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.submit:
+                //First caluculate result
+
+
+                //Then push to backend
+                communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
+                Call<QuizModel> call = communicator.sendQuizResult(quizModel);
+                call.enqueue(new SendToServerHandler());
+
                 break;
         }
     }
+
+    private class SendToServerHandler implements Callback<QuizModel> {
+        @Override
+        public void onResponse(Call<QuizModel> call, Response<QuizModel> response) {
+            QuizModel model = response.body();
+
+        }
+
+        @Override
+        public void onFailure(Call<QuizModel> call, Throwable t) {
+
+        }
+    }
+
 }
