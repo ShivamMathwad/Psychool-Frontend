@@ -118,6 +118,8 @@
 
             <ImageView
                 android:id="@+id/prevButton"
+                android:foreground="?selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:background="@drawable/previous"
@@ -125,8 +127,11 @@
 
             <ImageView
                 android:id="@+id/nextButton"
+                android:foreground="?selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
+
                 android:background="@drawable/next"/>
 
         </LinearLayout>
