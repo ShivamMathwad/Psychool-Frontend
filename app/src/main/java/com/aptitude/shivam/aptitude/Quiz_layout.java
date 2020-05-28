@@ -48,12 +48,13 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
 
     NetworkClient.ServerCommunicator communicator;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_layout);
 
-        d("TAG","In quiz layout");
+        Log.d("TAG","In quiz layout");
         communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
         Call<OceanQuestionModel> call = communicator.getOceanQuestions();
         call.enqueue(new QuestionGetterHandler());

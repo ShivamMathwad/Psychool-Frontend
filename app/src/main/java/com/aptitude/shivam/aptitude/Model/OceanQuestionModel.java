@@ -11,9 +11,11 @@ public class OceanQuestionModel {
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("question")
     @Expose
     private String question;
+
     @SerializedName("type")
     @Expose
     private String type;
