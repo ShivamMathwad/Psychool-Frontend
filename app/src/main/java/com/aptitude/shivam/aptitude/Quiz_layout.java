@@ -6,6 +6,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -45,7 +47,7 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
     QuizModel quizModel = new QuizModel();
     Map<Integer, Integer> map = new HashMap<>();
     List<String> questionsList = new ArrayList<>();
-
+    Dialog loadingQuestionDialog;
     NetworkClient.ServerCommunicator communicator;
 
     @Override
@@ -53,11 +55,11 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_layout);
 
-        d("TAG","In quiz layout");
-        communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
-        Call<OceanQuestionModel> call = communicator.getOceanQuestions();
-        call.enqueue(new QuestionGetterHandler());
-
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Loading Questions");
+        builder.setMessage("Please Wait...");
+        loadingQuestionDialog=builder.create();
+        loadingQuestionDialog.show();
         init();
     }
 
@@ -73,7 +75,7 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         prevButton = findViewById(R.id.prevButton);
         submitButton = findViewById(R.id.submit);
 
-//        questionView.setText(index + 1 + ". " + quizModel.questionsList.get(index));
+
         option1.setText(quizModel.option1);
         option2.setText(quizModel.option2);
         option3.setText(quizModel.option3);
@@ -83,6 +85,13 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         nextButton.setOnClickListener(this);
         prevButton.setOnClickListener(this);
         submitButton.setOnClickListener(this);
+
+
+        d("TAG","In quiz layout");
+        communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
+        Call<List<OceanQuestionModel>> call = communicator.getOceanQuestions();
+        call.enqueue(new QuestionGetterHandler());
+
 
     }
 
@@ -210,15 +219,25 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         }
     }
 
-    private class QuestionGetterHandler implements Callback<OceanQuestionModel> {
+    private class QuestionGetterHandler implements Callback<List<OceanQuestionModel>> {
         @Override
-        public void onResponse(Call<OceanQuestionModel> call, Response<OceanQuestionModel> response) {
-            Log.d("TAG","Response = "+response.body());
+        public void onResponse(Call<List<OceanQuestionModel>> call, Response<List<OceanQuestionModel>> response) {
+            List<OceanQuestionModel> oceanQuestionModels = response.body();
+
+            for(OceanQuestionModel questionModel : oceanQuestionModels)
+                questionsList.add(questionModel.getQuestion());
+
+            quizModel.populateQuestionsList(questionsList);
+            questionView.setText(index + 1 + ". " + quizModel.questionsList.get(index));
+            loadingQuestionDialog.dismiss();
         }
 
         @Override
-        public void onFailure(Call<OceanQuestionModel> call, Throwable t) {
-            Log.d("TAG","Fail = "+t.getMessage());
+        public void onFailure(Call<List<OceanQuestionModel>> call, Throwable t) {
+            Log.d("TAG","Error :"+t.getMessage());
+            loadingQuestionDialog.dismiss();
+            Toast.makeText(Quiz_layout.this, "Error! No Net..", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 

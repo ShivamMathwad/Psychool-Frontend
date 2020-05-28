@@ -3,6 +3,7 @@ package com.aptitude.shivam.aptitude.Network;
 import com.aptitude.shivam.aptitude.Model.OceanQuestionModel;
 import com.aptitude.shivam.aptitude.Model.QuizModel;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -23,7 +24,7 @@ public  class NetworkClient {
         Call<QuizModel> sendQuizResult(@Body QuizModel model);
 
         @GET("/getQuestions")
-        Call<OceanQuestionModel> getOceanQuestions();
+        Call<List<OceanQuestionModel>> getOceanQuestions();
 
     }
 

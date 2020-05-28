@@ -33,7 +33,7 @@
                     android:layout_marginBottom="20dp"
                     android:elevation="10dp"
                     android:gravity="center"
-                    android:text="1. I am the life of the party"
+                    android:text="NULL"
                     android:textColor="@color/textcolor"
                     android:textSize="25dp" />
 
