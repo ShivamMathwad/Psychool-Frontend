@@ -5,11 +5,13 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.round;
+
 
 public class Helper {
 
-    public static ArrayList calcPersonality(List<Integer> arr){
-        ArrayList<Float> result = new ArrayList<>();
+    public static ArrayList calcPersonality(ArrayList<Integer> arr){
+        ArrayList<Integer> result = new ArrayList<>();
         float extraversion, agreeableness, conscientiousness, neuroticism, openness;
         extraversion=agreeableness=conscientiousness=neuroticism=openness=0;
 
@@ -27,11 +29,11 @@ public class Helper {
         neuroticism = (neuroticism/40)*100;
         openness = (openness/40)*100;
 
-        result.add(openness);
-        result.add(conscientiousness);
-        result.add(extraversion);
-        result.add(agreeableness);
-        result.add(neuroticism);
+        result.add(round(openness));
+        result.add(round(conscientiousness));
+        result.add(round(extraversion));
+        result.add(round(agreeableness));
+        result.add(round(neuroticism));
 
         return result;
     }

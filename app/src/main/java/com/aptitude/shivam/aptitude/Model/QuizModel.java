@@ -5,7 +5,7 @@ import java.util.List;
 
 public class QuizModel {
     public List<String> questionsList = new ArrayList<>();
-    public List<String> answersList = new ArrayList<>();
+    public List<Integer> answersList = new ArrayList<>();
 
     public static String option1 = "Disagree";
     public static String option2 = "Slightly Disagree";
@@ -18,7 +18,7 @@ public class QuizModel {
         this.questionsList = questionsList;
     }
 
-    public void populateAnswersList(List<String> answersList){
+    public void populateAnswersList(List<Integer> answersList){
         this.answersList = answersList;
     }
 }

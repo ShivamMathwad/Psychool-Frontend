@@ -6,24 +6,22 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.provider.SyncStateContract;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aptitude.shivam.aptitude.Model.OceanQuestionModel;
 import com.aptitude.shivam.aptitude.Model.QuizModel;
-import com.aptitude.shivam.aptitude.Network.DB;
 import com.aptitude.shivam.aptitude.Network.NetworkClient;
 import com.aptitude.shivam.aptitude.Utils.Constants;
-import com.bumptech.glide.Glide;
+import com.aptitude.shivam.aptitude.Utils.Helper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,11 +29,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class quiz_layout extends AppCompatActivity implements View.OnClickListener {
+import static android.util.Log.d;
+
+
+public class Quiz_layout extends AppCompatActivity implements View.OnClickListener {
 
     int index = 0;
-    int set = 0;
-    int optionWeight;
     int TOTAL_QUESTIONS = 5;
 
     TextView questionView;
@@ -54,9 +53,10 @@ public class quiz_layout extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_layout);
 
-        questionsList = Arrays.asList("I am the life of the party.", "I feel little concern for others.", "I am always prepared.", "I get stressed out easily.", "I have a rich vocabulary.");
-        //questionsList = DB.getQuestionsFromDB();
-        quizModel.populateQuestionsList(questionsList);
+        d("TAG","In quiz layout");
+        communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
+        Call<OceanQuestionModel> call = communicator.getOceanQuestions();
+        call.enqueue(new QuestionGetterHandler());
 
         init();
     }
@@ -73,7 +73,7 @@ public class quiz_layout extends AppCompatActivity implements View.OnClickListen
         prevButton = findViewById(R.id.prevButton);
         submitButton = findViewById(R.id.submit);
 
-        questionView.setText(index + 1 + ". " + quizModel.questionsList.get(index));
+//        questionView.setText(index + 1 + ". " + quizModel.questionsList.get(index));
         option1.setText(quizModel.option1);
         option2.setText(quizModel.option2);
         option3.setText(quizModel.option3);
@@ -83,7 +83,6 @@ public class quiz_layout extends AppCompatActivity implements View.OnClickListen
         nextButton.setOnClickListener(this);
         prevButton.setOnClickListener(this);
         submitButton.setOnClickListener(this);
-
 
     }
 
@@ -126,7 +125,7 @@ public class quiz_layout extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.nextButton:
                 index = (index + 1) % quizModel.questionsList.size();
-                Log.d("TAG", "Total size = " + quizModel.questionsList.size() + " index = " + index);
+                d("TAG", "Total size = " + quizModel.questionsList.size() + " index = " + index);
 
                 questionView.setText(index + 1 + ". " + quizModel.questionsList.get(index));
 
@@ -154,8 +153,8 @@ public class quiz_layout extends AppCompatActivity implements View.OnClickListen
 
                 break;
 
-            case R.id.prevButton:
 
+            case R.id.prevButton:
                 if(index == 0)
                     index = quizModel.questionsList.size()-1;
                 else
@@ -186,29 +185,40 @@ public class quiz_layout extends AppCompatActivity implements View.OnClickListen
 
                 break;
 
+
             case R.id.submit:
                 //First caluculate result
-
-
+                ArrayList<Integer> sortedResult = new ArrayList<>();
+                ArrayList<Integer> result = new ArrayList<>();
+                //Sort the hashmap according to keys(i.e index) and store only values in list
+                for(int i=0;i<5;i++){
+                    sortedResult.add(map.get(i));
+                }
+                quizModel.populateAnswersList(sortedResult);
+                //result = Helper.calcPersonality(sortedResult);
+                result.add(45);
+                result.add(50);
+                result.add(60);
+                result.add(70);
+                result.add(80);
+                Intent intent = new Intent(Quiz_layout.this, OceanResult.class);
+                intent.putIntegerArrayListExtra("result",result);
+                startActivity(intent);
+                //Log.d("sorted result",sortedResult.toString());
                 //Then push to backend
-                communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
-                Call<QuizModel> call = communicator.sendQuizResult(quizModel);
-                call.enqueue(new SendToServerHandler());
-
                 break;
         }
     }
 
-    private class SendToServerHandler implements Callback<QuizModel> {
+    private class QuestionGetterHandler implements Callback<OceanQuestionModel> {
         @Override
-        public void onResponse(Call<QuizModel> call, Response<QuizModel> response) {
-            QuizModel model = response.body();
-
+        public void onResponse(Call<OceanQuestionModel> call, Response<OceanQuestionModel> response) {
+            Log.d("TAG","Response = "+response.body());
         }
 
         @Override
-        public void onFailure(Call<QuizModel> call, Throwable t) {
-
+        public void onFailure(Call<OceanQuestionModel> call, Throwable t) {
+            Log.d("TAG","Fail = "+t.getMessage());
         }
     }
 

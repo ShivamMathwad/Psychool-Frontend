@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        List<Integer> arr = new ArrayList<>();
-        arr = Arrays.asList(2,2,3,4,5,3,4,1,4,2,3,1,4,4,4,4,5,1,3,5,4,2,3,3,4,3,4,1,2,2,4,4,5,1,4,3,2,3,1,2,4,4,3,1,4,4,4,4,3,3);
+        //List<Integer> arr = new ArrayList<>();
+        //arr = Arrays.asList(2,2,3,4,5,3,4,1,4,2,3,1,4,4,4,4,5,1,3,5,4,2,3,3,4,3,4,1,2,2,4,4,5,1,4,3,2,3,1,2,4,4,3,1,4,4,4,4,3,3);
 
-        Helper.calcPersonality(arr);
+        //Helper.calcPersonality(arr);
 
         email = findViewById(R.id.email);
         aptitude_card = findViewById(R.id.aptitude_card);
@@ -45,19 +45,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.aptitude_card:
-                //startActivity(new Intent(MainActivity.this,quiz_layout.class));
+                //startActivity(new Intent(MainActivity.this,Quiz_layout.class));
                 break;
 
             case R.id.psychometric_card:
-                startActivity(new Intent(MainActivity.this,quiz_layout.class));
+                startActivity(new Intent(MainActivity.this, Quiz_layout.class));
                 break;
 
             case R.id.result_card:
-                //startActivity(new Intent(MainActivity.this,quiz_layout.class));
+                //startActivity(new Intent(MainActivity.this,Quiz_layout.class));
                 break;
 
             case R.id.profile_card:
-                //startActivity(new Intent(MainActivity.this,quiz_layout.class));
+                //startActivity(new Intent(MainActivity.this,Quiz_layout.class));
                 break;
         }
     }

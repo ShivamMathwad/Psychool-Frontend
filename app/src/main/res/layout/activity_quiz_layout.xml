@@ -7,159 +7,164 @@
 
     <include
         android:id="@+id/actionbar"
-        layout="@layout/action_bar"/>
+        layout="@layout/action_bar" />
 
     <ScrollView
-        android:layout_below="@+id/actionbar"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_below="@+id/actionbar">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/linear"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/question"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
-                android:gravity="center"
-                android:textColor="@color/textcolor"
-                android:text="1. I am the life of the party"
-                android:textSize="25dp"
-                android:elevation="10dp"/>
-
-            <RadioGroup
-                android:id="@+id/RadioGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:padding="15dp"
-                android:layout_gravity="center"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <androidx.appcompat.widget.AppCompatRadioButton
-                    android:id="@+id/option1"
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:text="1. I am the life of the party"
+                    android:textColor="@color/textcolor"
+                    android:textSize="25dp" />
+
+                <RadioGroup
+                    android:id="@+id/RadioGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Disagree"
-                    android:textColor="@color/textcolor"
-                    android:textSize="22dp"
-                    android:elevation="5dp"
-                    android:buttonTint="@color/colorPrimaryDark"
-                    android:onClick="onRadioButtonClicked"/>
+                    android:layout_gravity="center"
+                    android:layout_marginTop="35dp"
+                    android:orientation="vertical"
+                    android:padding="15dp">
 
-                <androidx.appcompat.widget.AppCompatRadioButton
-                    android:id="@+id/option2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:text="Slightly Disagree"
-                    android:textColor="@color/textcolor"
-                    android:textSize="22dp"
-                    android:elevation="5dp"
-                    android:buttonTint="@color/colorPrimaryDark"
-                    android:onClick="onRadioButtonClicked"/>
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/option1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/colorPrimaryDark"
+                        android:elevation="5dp"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Disagree"
+                        android:textColor="@color/textcolor"
+                        android:textSize="22dp" />
 
-                <androidx.appcompat.widget.AppCompatRadioButton
-                    android:id="@+id/option3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:text="Neutral"
-                    android:textColor="@color/textcolor"
-                    android:textSize="22dp"
-                    android:elevation="5dp"
-                    android:buttonTint="@color/colorPrimaryDark"
-                    android:onClick="onRadioButtonClicked"/>
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/option2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:buttonTint="@color/colorPrimaryDark"
+                        android:elevation="5dp"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Slightly Disagree"
+                        android:textColor="@color/textcolor"
+                        android:textSize="22dp" />
 
-                <androidx.appcompat.widget.AppCompatRadioButton
-                    android:id="@+id/option4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:text="Slightly Agree"
-                    android:textColor="@color/textcolor"
-                    android:textSize="22dp"
-                    android:elevation="5dp"
-                    android:buttonTint="@color/colorPrimaryDark"
-                    android:onClick="onRadioButtonClicked"/>
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/option3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:buttonTint="@color/colorPrimaryDark"
+                        android:elevation="5dp"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Neutral"
+                        android:textColor="@color/textcolor"
+                        android:textSize="22dp" />
 
-                <androidx.appcompat.widget.AppCompatRadioButton
-                    android:id="@+id/option5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:text="Agree"
-                    android:textColor="@color/textcolor"
-                    android:textSize="22dp"
-                    android:elevation="5dp"
-                    android:buttonTint="@color/colorPrimaryDark"
-                    android:onClick="onRadioButtonClicked"/>
-            </RadioGroup>
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/option4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:buttonTint="@color/colorPrimaryDark"
+                        android:elevation="5dp"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Slightly Agree"
+                        android:textColor="@color/textcolor"
+                        android:textSize="22dp" />
 
-        </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/option5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:buttonTint="@color/colorPrimaryDark"
+                        android:elevation="5dp"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Agree"
+                        android:textColor="@color/textcolor"
+                        android:textSize="22dp" />
+                </RadioGroup>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="32dp"
-            android:layout_below="@+id/linear"
-            android:layout_centerHorizontal="true">
-
-            <ImageView
-                android:id="@+id/prevButton"
-                android:foreground="?selectableItemBackground"
-                android:clickable="true"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:background="@drawable/previous"
-                android:layout_marginRight="17dp"/>
-
-            <ImageView
-                android:id="@+id/nextButton"
-                android:foreground="?selectableItemBackground"
-                android:clickable="true"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-
-                android:background="@drawable/next"/>
-
-        </LinearLayout>
+            </LinearLayout>
 
         </RelativeLayout>
     </ScrollView>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="32dp"
-        app:cardBackgroundColor="@color/gray"
-        android:clickable="true"
-        android:foreground="?android:selectableItemBackground"
-        android:elevation="8dp">
-
-        <TextView
+        <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Submit"
-            android:textColor="@color/white"
-            android:textSize="25dp" />
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
 
-    </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/prevButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="17dp"
+                android:background="@drawable/previous"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground" />
+
+            <ImageView
+                android:id="@+id/nextButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/next"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/linear"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:elevation="8dp"
+            android:foreground="?android:selectableItemBackground"
+            app:cardBackgroundColor="@color/gray">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Submit"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
 
 </RelativeLayout>
