@@ -2,6 +2,7 @@ package com.aptitude.shivam.aptitude.Utils;
 
 public class Constants {
 
-    public static final String SERVER_URL = "http://10.0.0.217:3000/";
+    public static final String SERVER_URL = "https://psychool-backend.herokuapp.com/";
+    public static String Username = "";
 
 }

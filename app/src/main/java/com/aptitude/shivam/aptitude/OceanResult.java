@@ -23,6 +23,7 @@ public class OceanResult extends AppCompatActivity {
         init();
 
         result = getIntent().getIntegerArrayListExtra("result");
+
         o_progressbar.setProgress(result.get(0));
         o_progress.setText(result.get(0)+"%");
         c_progressbar.setProgress(result.get(1));

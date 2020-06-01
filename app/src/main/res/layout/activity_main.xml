@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="#fafad2">
+    android:background="@mipmap/blue_background">
 
     <include
         android:id="@+id/actionbar"
@@ -28,7 +28,7 @@
         android:gravity="center_horizontal"
         android:text="Shivam Mathwad"
         android:textColor="#232b2b"
-        android:textSize="18dp" />
+        android:textSize="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                     android:layout_below="@+id/aptitude"
                     android:gravity="center_horizontal"
                     android:text="Aptitude test"
-                    android:textColor="#232b2b"
+                    android:textColor="@color/textcolor"
                     android:textSize="17dp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -102,7 +102,7 @@
                     android:layout_below="@+id/psychometric"
                     android:gravity="center_horizontal"
                     android:text="Psychometric test"
-                    android:textColor="#232b2b"
+                    android:textColor="@color/textcolor"
                     android:textSize="17dp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -150,7 +150,7 @@
                     android:layout_below="@+id/result"
                     android:gravity="center_horizontal"
                     android:text="Result"
-                    android:textColor="#232b2b"
+                    android:textColor="@color/textcolor"
                     android:textSize="17dp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -170,10 +170,10 @@
 
                 <ImageView
                     android:id="@+id/profile"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp"
-                    android:padding="5dp"
-                    android:src="@mipmap/profile" />
+                    android:padding="10dp"
+                    android:src="@mipmap/profile_settings" />
 
                 <View
                     android:layout_width="match_parent"
@@ -187,7 +187,7 @@
                     android:layout_below="@+id/profile"
                     android:gravity="center_horizontal"
                     android:text="My Profile"
-                    android:textColor="#232b2b"
+                    android:textColor="@color/textcolor"
                     android:textSize="17dp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

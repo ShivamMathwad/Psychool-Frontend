@@ -24,11 +24,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //List<Integer> arr = new ArrayList<>();
-        //arr = Arrays.asList(2,2,3,4,5,3,4,1,4,2,3,1,4,4,4,4,5,1,3,5,4,2,3,3,4,3,4,1,2,2,4,4,5,1,4,3,2,3,1,2,4,4,3,1,4,4,4,4,3,3);
-
-        //Helper.calcPersonality(arr);
-
         email = findViewById(R.id.email);
         aptitude_card = findViewById(R.id.aptitude_card);
         psychometric_card = findViewById(R.id.psychometric_card);

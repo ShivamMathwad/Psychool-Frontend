@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context=".Signup"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <include
+            android:id="@+id/actionbar"
+            layout="@layout/action_bar" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/actionbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="62dp"
+            android:hint="Enter Username" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/username"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:hint="Enter Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="85dp"
+            android:text="Submit"
+            android:textColor="@color/darkBlue"
+            android:textSize="17dp" />
+
+    </RelativeLayout>
+</ScrollView>

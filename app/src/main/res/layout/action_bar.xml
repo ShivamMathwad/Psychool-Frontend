@@ -12,6 +12,6 @@
         android:layout_centerHorizontal="true"
         android:text="Psychool"
         android:textSize="23dp"
-        android:textColor="#232b2b" />
+        android:textColor="@color/darkBlue" />
 
 </RelativeLayout>

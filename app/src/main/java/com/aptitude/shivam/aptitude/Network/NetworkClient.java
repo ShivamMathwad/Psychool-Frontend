@@ -2,6 +2,8 @@ package com.aptitude.shivam.aptitude.Network;
 
 import com.aptitude.shivam.aptitude.Model.OceanQuestionModel;
 import com.aptitude.shivam.aptitude.Model.QuizModel;
+import com.aptitude.shivam.aptitude.Model.StatusModel;
+import com.aptitude.shivam.aptitude.Model.UserModel;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -20,8 +22,9 @@ public  class NetworkClient {
 
     public interface ServerCommunicator{
 
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
         @POST("/signup")
-        Call<QuizModel> sendQuizResult(@Body QuizModel model);
+        Call<StatusModel> signup(@Body UserModel model);
 
         @GET("/getQuestions")
         Call<List<OceanQuestionModel>> getOceanQuestions();

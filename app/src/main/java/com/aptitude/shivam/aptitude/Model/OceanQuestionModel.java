@@ -19,6 +19,7 @@ public class OceanQuestionModel {
     @SerializedName("type")
     @Expose
     private String type;
+
     @SerializedName("reverse")
     @Expose
     private String reverse;

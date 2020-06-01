@@ -37,7 +37,7 @@ import static android.util.Log.d;
 public class Quiz_layout extends AppCompatActivity implements View.OnClickListener {
 
     int index = 0;
-    int TOTAL_QUESTIONS = 5;
+    int TOTAL_QUESTIONS = 50;
 
     TextView questionView;
     RadioButton option1, option2, option3, option4, option5;
@@ -56,19 +56,12 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_layout);
 
-<<<<<<< HEAD
-        Log.d("TAG","In quiz layout");
-        communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
-        Call<OceanQuestionModel> call = communicator.getOceanQuestions();
-        call.enqueue(new QuestionGetterHandler());
-
-=======
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Loading Questions");
         builder.setMessage("Please Wait...");
         loadingQuestionDialog=builder.create();
         loadingQuestionDialog.show();
->>>>>>> 8292b1295862569cd7713c243ebe06e08413f1aa
+
         init();
     }
 
@@ -84,7 +77,6 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         prevButton = findViewById(R.id.prevButton);
         submitButton = findViewById(R.id.submit);
 
-
         option1.setText(quizModel.option1);
         option2.setText(quizModel.option2);
         option3.setText(quizModel.option3);
@@ -95,12 +87,9 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         prevButton.setOnClickListener(this);
         submitButton.setOnClickListener(this);
 
-
-        d("TAG","In quiz layout");
         communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
         Call<List<OceanQuestionModel>> call = communicator.getOceanQuestions();
         call.enqueue(new QuestionGetterHandler());
-
 
     }
 
@@ -133,6 +122,7 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
 
         if (checked) {
             map.put(index, weight);
+
             if (map.size() == TOTAL_QUESTIONS)
                 submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
         }
@@ -143,9 +133,8 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.nextButton:
                 index = (index + 1) % quizModel.questionsList.size();
-                d("TAG", "Total size = " + quizModel.questionsList.size() + " index = " + index);
 
-                questionView.setText(index + 1 + ". " + quizModel.questionsList.get(index));
+                questionView.setText((index+1)+ ". " + quizModel.questionsList.get(index));
 
                 if (map.containsKey(index)) {
                     int weight = map.get(index);
@@ -205,20 +194,14 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
 
 
             case R.id.submit:
-                //First caluculate result
+                //First calculate result
                 ArrayList<Integer> sortedResult = new ArrayList<>();
-                ArrayList<Integer> result = new ArrayList<>();
                 //Sort the hashmap according to keys(i.e index) and store only values in list
-                for(int i=0;i<5;i++){
+                for(int i=0;i<50;i++){
                     sortedResult.add(map.get(i));
                 }
-                quizModel.populateAnswersList(sortedResult);
-                //result = Helper.calcPersonality(sortedResult);
-                result.add(45);
-                result.add(50);
-                result.add(60);
-                result.add(70);
-                result.add(80);
+                ArrayList<Integer> result = Helper.calcPersonality(sortedResult);
+
                 Intent intent = new Intent(Quiz_layout.this, OceanResult.class);
                 intent.putIntegerArrayListExtra("result",result);
                 startActivity(intent);
@@ -237,15 +220,15 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
                 questionsList.add(questionModel.getQuestion());
 
             quizModel.populateQuestionsList(questionsList);
-            questionView.setText(index + 1 + ". " + quizModel.questionsList.get(index));
+            questionView.setText((index+1)+ ". " + quizModel.questionsList.get(index));
             loadingQuestionDialog.dismiss();
         }
 
         @Override
         public void onFailure(Call<List<OceanQuestionModel>> call, Throwable t) {
-            Log.d("TAG","Error :"+t.getMessage());
+            d("TAG","Error :"+t.getMessage());
             loadingQuestionDialog.dismiss();
-            Toast.makeText(Quiz_layout.this, "Error! No Net..", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Quiz_layout.this, "Error! No Internet..", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".Login">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:paddingHorizontal="65dp"
+            android:layout_marginTop="35dp"
+            android:layout_below="@+id/actionbar"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/main_icon" />
+
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="215dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:hint="Enter Username" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="215dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/username"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:hint="Enter Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            android:text="Login"
+            android:background="#eaeaea"
+            android:foreground="?android:selectableItemBackground"
+            android:textColor="@color/darkBlue"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="60dp"
+            android:text="Dont have an account? Register"
+            android:textColor="@color/darkBlue"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+</ScrollView>

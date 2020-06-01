@@ -5,8 +5,6 @@ import java.util.List;
 
 public class QuizModel {
     public List<String> questionsList = new ArrayList<>();
-    public List<Integer> answersList = new ArrayList<>();
-
     public static String option1 = "Disagree";
     public static String option2 = "Slightly Disagree";
     public static String option3 = "Neutral";
@@ -16,9 +14,5 @@ public class QuizModel {
 
     public void populateQuestionsList(List<String> questionsList){
         this.questionsList = questionsList;
-    }
-
-    public void populateAnswersList(List<Integer> answersList){
-        this.answersList = answersList;
     }
 }
