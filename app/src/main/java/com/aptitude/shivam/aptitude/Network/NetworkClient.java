@@ -1,5 +1,6 @@
 package com.aptitude.shivam.aptitude.Network;
 
+import com.aptitude.shivam.aptitude.Model.OceanModel;
 import com.aptitude.shivam.aptitude.Model.OceanQuestionModel;
 import com.aptitude.shivam.aptitude.Model.QuizModel;
 import com.aptitude.shivam.aptitude.Model.StatusModel;
@@ -26,9 +27,20 @@ public  class NetworkClient {
         @POST("/signup")
         Call<StatusModel> signup(@Body UserModel model);
 
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/login")
+        Call<StatusModel> login(@Body UserModel model);
+
         @GET("/getQuestions")
         Call<List<OceanQuestionModel>> getOceanQuestions();
 
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeOceanResult")
+        Call<StatusModel> storeOceanResult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getOceanResult")
+        Call<OceanModel> getOceanResult(@Body UserModel model);
     }
 
     public static ServerCommunicator getCommunicator(String url){

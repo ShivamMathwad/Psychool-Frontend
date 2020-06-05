@@ -19,8 +19,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aptitude.shivam.aptitude.Model.OceanModel;
 import com.aptitude.shivam.aptitude.Model.OceanQuestionModel;
 import com.aptitude.shivam.aptitude.Model.QuizModel;
+import com.aptitude.shivam.aptitude.Model.StatusModel;
+import com.aptitude.shivam.aptitude.Model.UserModel;
 import com.aptitude.shivam.aptitude.Network.NetworkClient;
 import com.aptitude.shivam.aptitude.Utils.Constants;
 import com.aptitude.shivam.aptitude.Utils.Helper;
@@ -47,9 +50,9 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
     QuizModel quizModel = new QuizModel();
     Map<Integer, Integer> map = new HashMap<>();
     List<String> questionsList = new ArrayList<>();
-    Dialog loadingQuestionDialog;
+    Dialog loadingQuestionDialog,loadingResultDialog;
     NetworkClient.ServerCommunicator communicator;
-
+    ArrayList<Integer> result = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +63,14 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         builder.setTitle("Loading Questions");
         builder.setMessage("Please Wait...");
         loadingQuestionDialog=builder.create();
+        loadingQuestionDialog.setCanceledOnTouchOutside(false);
         loadingQuestionDialog.show();
+
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("Generating your result");
+        builder2.setMessage("Please Wait...");
+        loadingResultDialog = builder2.create();
+        loadingResultDialog.setCanceledOnTouchOutside(false);
 
         init();
     }
@@ -90,7 +100,6 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
         Call<List<OceanQuestionModel>> call = communicator.getOceanQuestions();
         call.enqueue(new QuestionGetterHandler());
-
     }
 
     public void onRadioButtonClicked(View view) {
@@ -189,7 +198,6 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
                     }
                 } else
                     rg.clearCheck();
-
                 break;
 
 
@@ -200,13 +208,26 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
                 for(int i=0;i<50;i++){
                     sortedResult.add(map.get(i));
                 }
-                ArrayList<Integer> result = Helper.calcPersonality(sortedResult);
+                result = Helper.calcPersonality(sortedResult);
 
-                Intent intent = new Intent(Quiz_layout.this, OceanResult.class);
-                intent.putIntegerArrayListExtra("result",result);
-                startActivity(intent);
-                //Log.d("sorted result",sortedResult.toString());
+                loadingResultDialog.show();
+
                 //Then push to backend
+                OceanModel oceanModel = new OceanModel();
+                oceanModel.setOResult(result.get(0));
+                oceanModel.setCResult(result.get(1));
+                oceanModel.setEResult(result.get(2));
+                oceanModel.setAResult(result.get(3));
+                oceanModel.setNResult(result.get(4));
+
+                UserModel userModel = new UserModel();
+                userModel.setUsername(Constants.Username);
+                userModel.setPassword("");
+                userModel.setOceanResult(oceanModel);
+                userModel.setAptitudeResult(null);
+
+                Call<StatusModel> call2 = communicator.storeOceanResult(userModel);
+                call2.enqueue(new StoreResultHandler());
                 break;
         }
     }
@@ -233,4 +254,27 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         }
     }
 
+
+    private class StoreResultHandler implements Callback<StatusModel> {
+        @Override
+        public void onResponse(Call<StatusModel> call, Response<StatusModel> response) {
+            StatusModel statusModel = response.body();
+
+            if(statusModel.getStatus().equals("Success")){
+                Intent intent = new Intent(Quiz_layout.this, OceanResult.class);
+                intent.putIntegerArrayListExtra("result",result);
+                startActivity(intent);
+            } else {
+                Toast.makeText(Quiz_layout.this, "Error!!", Toast.LENGTH_LONG).show();
+            }
+            loadingResultDialog.dismiss();
+        }
+
+        @Override
+        public void onFailure(Call<StatusModel> call, Throwable t) {
+            d("TAG","Error :"+t.getMessage());
+            loadingResultDialog.dismiss();
+            Toast.makeText(Quiz_layout.this, "Error! No Internet..", Toast.LENGTH_LONG).show();
+        }
+    }
 }

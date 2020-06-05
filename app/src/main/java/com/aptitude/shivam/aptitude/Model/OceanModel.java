@@ -61,4 +61,14 @@ public class OceanModel {
         this.nResult = nResult;
     }
 
+    @Override
+    public String toString() {
+        return "OceanModel{" +
+                "oResult=" + oResult +
+                ", cResult=" + cResult +
+                ", eResult=" + eResult +
+                ", aResult=" + aResult +
+                ", nResult=" + nResult +
+                '}';
+    }
 }

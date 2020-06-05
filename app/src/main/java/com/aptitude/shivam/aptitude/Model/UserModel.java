@@ -14,10 +14,10 @@ public class UserModel {
     private String password;
     @SerializedName("ocean_result")
     @Expose
-    private List<OceanModel> oceanResult = null;
+    private OceanModel oceanResult;
     @SerializedName("aptitude_result")
     @Expose
-    private List<Object> aptitudeResult = null;
+    private AptitudeModel aptitudeResult;
 
     public String getUsername() {
         return username;
@@ -35,20 +35,29 @@ public class UserModel {
         this.password = password;
     }
 
-    public List<OceanModel> getOceanResult() {
+    public OceanModel getOceanResult() {
         return oceanResult;
     }
 
-    public void setOceanResult(List<OceanModel> oceanResult) {
+    public void setOceanResult(OceanModel oceanResult) {
         this.oceanResult = oceanResult;
     }
 
-    public List<Object> getAptitudeResult() {
+    public AptitudeModel getAptitudeResult() {
         return aptitudeResult;
     }
 
-    public void setAptitudeResult(List<Object> aptitudeResult) {
+    public void setAptitudeResult(AptitudeModel aptitudeResult) {
         this.aptitudeResult = aptitudeResult;
     }
 
+    @Override
+    public String toString() {
+        return "UserModel{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", oceanResult=" + oceanResult +
+                ", aptitudeResult=" + aptitudeResult +
+                '}';
+    }
 }

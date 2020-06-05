@@ -23,7 +23,7 @@
         android:layout_below="@+id/logo"
         android:layout_centerHorizontal="true"
         android:textSize="23dp"
-        android:textColor="#0080ff"
+        android:textColor="#3990E6"
         />
 
 

@@ -39,6 +39,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
         builder.setTitle("Creating your account");
         builder.setMessage("Please Wait...");
         loadingDialog=builder.create();
+        loadingDialog.setCanceledOnTouchOutside(false);
 
         init();
     }
@@ -65,8 +66,6 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
                     userModel.setPassword(str_password);
                     userModel.setAptitudeResult(null);
                     userModel.setOceanResult(null);
-
-                    Log.d("TAG",userModel.getUsername());
 
                     communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
                     Call<StatusModel> call = communicator.signup(userModel);
@@ -96,7 +95,6 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
             StatusModel statusModel = response.body();
 
             if(statusModel.getStatus().equals("Success")){
-                Constants.Username = str_username;
                 Intent intent = new Intent(Signup.this, Login.class);
                 startActivity(intent);
                 Toast.makeText(Signup.this, "Your account is created successfully!!", Toast.LENGTH_SHORT).show();
