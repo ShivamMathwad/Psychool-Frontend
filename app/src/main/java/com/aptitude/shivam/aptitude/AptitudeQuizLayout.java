@@ -73,7 +73,7 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                 option2.setBackgroundColor(getResources().getColor(R.color.white));
                 option3.setBackgroundColor(getResources().getColor(R.color.white));
                 option4.setBackgroundColor(getResources().getColor(R.color.white));
-                option1.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                option1.setBackgroundColor(getResources().getColor(R.color.newblue));
                 map.put(index,"A");
 
                 if (map.size() == TOTAL_QUESTIONS)
@@ -84,7 +84,7 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                 option1.setBackgroundColor(getResources().getColor(R.color.white));
                 option3.setBackgroundColor(getResources().getColor(R.color.white));
                 option4.setBackgroundColor(getResources().getColor(R.color.white));
-                option2.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                option2.setBackgroundColor(getResources().getColor(R.color.newblue));
                 map.put(index,"B");
 
                 if (map.size() == TOTAL_QUESTIONS)
@@ -95,7 +95,7 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                 option1.setBackgroundColor(getResources().getColor(R.color.white));
                 option2.setBackgroundColor(getResources().getColor(R.color.white));
                 option4.setBackgroundColor(getResources().getColor(R.color.white));
-                option3.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                option3.setBackgroundColor(getResources().getColor(R.color.newblue));
                 map.put(index,"C");
 
                 if (map.size() == TOTAL_QUESTIONS)
@@ -106,7 +106,7 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                 option1.setBackgroundColor(getResources().getColor(R.color.white));
                 option2.setBackgroundColor(getResources().getColor(R.color.white));
                 option3.setBackgroundColor(getResources().getColor(R.color.white));
-                option4.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                option4.setBackgroundColor(getResources().getColor(R.color.newblue));
                 map.put(index,"D");
 
                 if (map.size() == TOTAL_QUESTIONS)
@@ -129,28 +129,28 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                             option2.setBackgroundColor(getResources().getColor(R.color.white));
                             option3.setBackgroundColor(getResources().getColor(R.color.white));
                             option4.setBackgroundColor(getResources().getColor(R.color.white));
-                            option1.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                            option1.setBackgroundColor(getResources().getColor(R.color.newblue));
                             break;
 
                         case "B":
                             option1.setBackgroundColor(getResources().getColor(R.color.white));
                             option3.setBackgroundColor(getResources().getColor(R.color.white));
                             option4.setBackgroundColor(getResources().getColor(R.color.white));
-                            option2.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                            option2.setBackgroundColor(getResources().getColor(R.color.newblue));
                             break;
 
                         case "C":
                             option1.setBackgroundColor(getResources().getColor(R.color.white));
                             option2.setBackgroundColor(getResources().getColor(R.color.white));
                             option4.setBackgroundColor(getResources().getColor(R.color.white));
-                            option3.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                            option3.setBackgroundColor(getResources().getColor(R.color.newblue));
                             break;
 
                         case "D":
                             option1.setBackgroundColor(getResources().getColor(R.color.white));
                             option2.setBackgroundColor(getResources().getColor(R.color.white));
                             option3.setBackgroundColor(getResources().getColor(R.color.white));
-                            option4.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                            option4.setBackgroundColor(getResources().getColor(R.color.newblue));
                             break;
                     }
                 } else{
@@ -180,28 +180,28 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                             option2.setBackgroundColor(getResources().getColor(R.color.white));
                             option3.setBackgroundColor(getResources().getColor(R.color.white));
                             option4.setBackgroundColor(getResources().getColor(R.color.white));
-                            option1.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                            option1.setBackgroundColor(getResources().getColor(R.color.newblue));
                             break;
 
                         case "B":
                             option1.setBackgroundColor(getResources().getColor(R.color.white));
                             option3.setBackgroundColor(getResources().getColor(R.color.white));
                             option4.setBackgroundColor(getResources().getColor(R.color.white));
-                            option2.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                            option2.setBackgroundColor(getResources().getColor(R.color.newblue));
                             break;
 
                         case "C":
                             option1.setBackgroundColor(getResources().getColor(R.color.white));
                             option2.setBackgroundColor(getResources().getColor(R.color.white));
                             option4.setBackgroundColor(getResources().getColor(R.color.white));
-                            option3.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                            option3.setBackgroundColor(getResources().getColor(R.color.newblue));
                             break;
 
                         case "D":
                             option1.setBackgroundColor(getResources().getColor(R.color.white));
                             option2.setBackgroundColor(getResources().getColor(R.color.white));
                             option3.setBackgroundColor(getResources().getColor(R.color.white));
-                            option4.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                            option4.setBackgroundColor(getResources().getColor(R.color.newblue));
                             break;
                     }
                 } else{
@@ -232,6 +232,7 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                         Thread.sleep(1000);
                         //timer.setText(outerLoop+":"+innerLoop);
                         Log.d("TAG",outerLoop+":"+innerLoop);
+                        setTextToTimer(outerLoop,innerLoop);
                         innerLoop -= 1;
                     }
                     outerLoop -= 1;
@@ -247,6 +248,17 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                 e.printStackTrace();
             }
         }
+
+        public void setTextToTimer(final int outerloop,final int innerloop){
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    timer.setText(outerloop+" : "+innerloop);
+                }
+            });
+
+        }
+
     }
 
 }
