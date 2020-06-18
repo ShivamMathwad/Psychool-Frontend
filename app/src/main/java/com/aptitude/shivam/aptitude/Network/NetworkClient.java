@@ -1,5 +1,6 @@
 package com.aptitude.shivam.aptitude.Network;
 
+import com.aptitude.shivam.aptitude.Model.AptitudeQuestionModel;
 import com.aptitude.shivam.aptitude.Model.OceanModel;
 import com.aptitude.shivam.aptitude.Model.OceanQuestionModel;
 import com.aptitude.shivam.aptitude.Model.QuizModel;
@@ -30,6 +31,12 @@ public  class NetworkClient {
         @Headers({"Accept: application/json", "Content-Type: application/json"})
         @POST("/login")
         Call<StatusModel> login(@Body UserModel model);
+
+        @GET("/getNAQuestions")
+        Call<List<AptitudeQuestionModel>> getNAQuestions();
+
+        @GET("/getPAQuestions")
+        Call<List<AptitudeQuestionModel>> getPAQuestions();
 
         @GET("/getQuestions")
         Call<List<OceanQuestionModel>> getOceanQuestions();

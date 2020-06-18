@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Results"></activity>
+        <activity android:name=".StartInstructions"></activity>
+        <activity android:name=".AptitudeQuizLayout" />
+        <activity android:name=".AptitudeMain" />
+        <activity android:name=".Results" />
         <activity android:name=".Login" />
         <activity android:name=".Signup" />
         <activity android:name=".OceanResult" />
