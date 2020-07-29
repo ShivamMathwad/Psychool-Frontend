@@ -26,7 +26,7 @@
                 android:paddingHorizontal="13dp"
                 android:text="Three qualities of sugar costing Rs. 22/kg. Rs. 25/kg and Rs. 30/kg are mixed in the ratio 1:2:3 respectively. What is the cost of the resultant mixture per kg?"
                 android:textAlignment="center"
-                android:textColor="@color/textcolor"
+                android:textColor="@color/darkBlue"
                 android:maxLines="6"
                 android:textSize="24dp" />
 
@@ -37,21 +37,19 @@
                 android:layout_below="@+id/quizQuestion"
                 android:layout_marginHorizontal="19dp"
                 android:layout_marginTop="45dp"
-                android:padding="10dp"
+                android:padding="6dp"
                 android:orientation="horizontal"
                 android:weightSum="100">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
                     android:layout_weight="50"
                     android:layout_margin="10dp"
                     app:cardElevation="5dp"
                     app:cardCornerRadius="10dp"
                     android:clickable="true"
-                    android:foreground="?android:selectableItemBackground"
-                    >
+                    android:foreground="?android:selectableItemBackground">
 
                     <TextView
                         android:id="@+id/option1"
@@ -59,7 +57,7 @@
                         android:layout_height="match_parent"
                         android:padding="20dp"
                         android:text="Rs. 24/kg"
-                        android:textColor="@color/textcolor"
+                        android:textColor="@color/darkBlue"
                         android:textAlignment="center"
                         android:textSize="20dp" />
                 </androidx.cardview.widget.CardView>
@@ -67,14 +65,12 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
                     android:layout_weight="50"
                     android:layout_margin="10dp"
                     app:cardElevation="5dp"
                     app:cardCornerRadius="10dp"
                     android:clickable="true"
-                    android:foreground="?android:selectableItemBackground"
-                    >
+                    android:foreground="?android:selectableItemBackground">
 
                     <TextView
                         android:id="@+id/option2"
@@ -82,7 +78,7 @@
                         android:layout_height="match_parent"
                         android:padding="20dp"
                         android:text="Rs. 25/kg"
-                        android:textColor="@color/textcolor"
+                        android:textColor="@color/darkBlue"
                         android:textAlignment="center"
                         android:textSize="20dp" />
                 </androidx.cardview.widget.CardView>
@@ -94,23 +90,20 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linear"
                 android:layout_marginHorizontal="19dp"
-                android:layout_marginTop="25dp"
                 android:layout_marginBottom="50dp"
                 android:orientation="horizontal"
-                android:padding="10dp"
+                android:padding="6dp"
                 android:weightSum="100">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
                     android:layout_weight="50"
                     app:cardElevation="5dp"
                     android:layout_margin="10dp"
                     app:cardCornerRadius="10dp"
                     android:clickable="true"
-                    android:foreground="?android:selectableItemBackground"
-                    >
+                    android:foreground="?android:selectableItemBackground">
 
                     <TextView
                         android:id="@+id/option3"
@@ -118,7 +111,7 @@
                         android:layout_height="match_parent"
                         android:padding="20dp"
                         android:text="Rs. 34/kg"
-                        android:textColor="@color/textcolor"
+                        android:textColor="@color/darkBlue"
                         android:textAlignment="center"
                         android:textSize="20dp" />
                 </androidx.cardview.widget.CardView>
@@ -126,7 +119,6 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
                     android:layout_weight="50"
                     app:cardElevation="5dp"
                     android:layout_margin="10dp"
@@ -141,7 +133,7 @@
                         android:layout_height="match_parent"
                         android:padding="20dp"
                         android:text="Rs. 27/kg"
-                        android:textColor="@color/textcolor"
+                        android:textColor="@color/darkBlue"
                         android:textAlignment="center"
                         android:textSize="20dp" />
                 </androidx.cardview.widget.CardView>
@@ -160,9 +152,9 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="13dp"
         android:background="@drawable/circular_drawable"
-        android:paddingLeft="24dp"
+        android:paddingLeft="22dp"
         android:paddingTop="13dp"
-        android:paddingRight="19dp"
+        android:paddingRight="21dp"
         android:paddingBottom="13dp"
         android:text="10:00"
         android:textColor="@color/darkBlue"

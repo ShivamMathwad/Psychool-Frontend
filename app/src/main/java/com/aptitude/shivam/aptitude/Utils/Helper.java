@@ -1,14 +1,53 @@
 package com.aptitude.shivam.aptitude.Utils;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.Window;
+import android.widget.TextView;
+
+import com.aptitude.shivam.aptitude.Model.ImageModel;
+import com.aptitude.shivam.aptitude.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import static com.aptitude.shivam.aptitude.Utils.Constants.allQuestionsAndOptions;
 import static java.lang.Math.round;
 
 
 public class Helper {
+
+    public static Dialog createDialog(Context context, int layoutFile, String message){
+        View view = LayoutInflater.from(context).inflate(layoutFile,null,false);
+        TextView loadingText = view.findViewById(R.id.loadingText);
+        loadingText.setText(message);
+
+        Dialog dialog=new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
+        dialog.setContentView(view);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        return dialog;
+    }
+
+    public static String createPassword(){
+        int number = (int) Math.floor(Math.random() * (9999 - 1000) + 1000);
+
+        String AlphaNumericString = "abcdefghijklmnopqrstuvxyz";
+        StringBuilder sb = new StringBuilder(2);
+        for (int i=0; i<2; i++) {
+            int index = (int)(AlphaNumericString.length() * Math.random());
+            sb.append(AlphaNumericString.charAt(index)); // add Character one by one in end of sb
+        }
+
+        return String.valueOf(number) + sb.toString();
+    }
 
     public static ArrayList calcPersonality(ArrayList<Integer> arr){
         ArrayList<Integer> result = new ArrayList<>();
@@ -36,6 +75,76 @@ public class Helper {
         result.add(round(neuroticism));
 
         return result;
+    }
+
+    public static Integer calcAptitudeScore(Map<Integer,String> map){
+        float score = 0;
+        int result;
+
+        for(int i=0; i<map.size(); i++){
+            if(allQuestionsAndOptions.get(i).getCorrectOption().equals(map.get(i)) ){
+                score += 1;
+            } else {
+                score += 0;
+            }
+        }
+        score = (score/map.size())*100;
+        result = Math.round(score);
+
+        return result;
+    }
+
+    public static Integer calc_ARandSA_score(Map<Integer,String> map, List<ImageModel> list){
+        float score = 0;
+        int result;
+
+        for(int i=0; i<map.size(); i++){
+            if(list.get(i).getCorrectOption().equals(map.get(i)) ){
+                score += 1;
+            } else {
+                score += 0;
+            }
+        }
+        score = (score/map.size())*100;
+        result = Math.round(score);
+
+        return result;
+    }
+
+    public static List<ImageModel> abstractModelList(){
+        String question, option;
+        List<ImageModel> modelList = new ArrayList<>();
+        String[] correctOptionList = Constants.abstractCorrectOptionList;
+
+        for(int i=1;i<=30;i++){
+            ImageModel object = new ImageModel();
+            question = "ar_q"+i;
+            option = "ar_op"+i;
+            object.setId(i);
+            object.setQuestion(question);
+            object.setOptions(option);
+            object.setCorrectOption(correctOptionList[i-1]);
+            modelList.add(object);
+        }
+        return modelList;
+    }
+
+    public static List<ImageModel> spatialModelList(){
+        String question, option;
+        List<ImageModel> modelList = new ArrayList<>();
+        String[] correctOptionList = Constants.spatialCorrectOptionList;
+
+        for(int i=1;i<=30;i++){
+            ImageModel object = new ImageModel();
+            question = "sa_q"+i;
+            option = "sa_op"+i;
+            object.setId(i);
+            object.setQuestion(question);
+            object.setOptions(option);
+            object.setCorrectOption(correctOptionList[i-1]);
+            modelList.add(object);
+        }
+        return modelList;
     }
 
 }

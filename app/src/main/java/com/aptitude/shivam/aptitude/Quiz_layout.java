@@ -59,18 +59,8 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_layout);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Loading Questions");
-        builder.setMessage("Please Wait...");
-        loadingQuestionDialog=builder.create();
-        loadingQuestionDialog.setCanceledOnTouchOutside(false);
-        loadingQuestionDialog.show();
-
-        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
-        builder2.setTitle("Generating your result");
-        builder2.setMessage("Please Wait...");
-        loadingResultDialog = builder2.create();
-        loadingResultDialog.setCanceledOnTouchOutside(false);
+        loadingQuestionDialog = Helper.createDialog(this, R.layout.loading_dialog, "Loading Questions");
+        loadingResultDialog = Helper.createDialog(this, R.layout.loading_dialog, "Generating your result");
 
         init();
     }
@@ -97,6 +87,7 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         prevButton.setOnClickListener(this);
         submitButton.setOnClickListener(this);
 
+        loadingQuestionDialog.show();
         communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
         Call<List<OceanQuestionModel>> call = communicator.getOceanQuestions();
         call.enqueue(new QuestionGetterHandler());
@@ -166,7 +157,6 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
                     }
                 } else
                     rg.clearCheck();
-
                 break;
 
 
@@ -202,32 +192,34 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
 
 
             case R.id.submit:
-                //First calculate result
-                ArrayList<Integer> sortedResult = new ArrayList<>();
-                //Sort the hashmap according to keys(i.e index) and store only values in list
-                for(int i=0;i<50;i++){
-                    sortedResult.add(map.get(i));
+                if(!(map.size() == TOTAL_QUESTIONS) ){
+                    Toast.makeText(this, "Attempt all questions first!!", Toast.LENGTH_LONG).show();
+                } else {
+                    //First calculate result
+                    ArrayList<Integer> sortedResult = new ArrayList<>();
+                    //Sort the hashmap according to keys(i.e index) and store only values in list
+                    for(int i=0;i<50;i++){
+                        sortedResult.add(map.get(i));
+                    }
+                    result = Helper.calcPersonality(sortedResult);
+
+                    loadingResultDialog.show();
+
+                    //Then push to backend
+                    OceanModel oceanModel = new OceanModel();
+                    oceanModel.setOResult(result.get(0));
+                    oceanModel.setCResult(result.get(1));
+                    oceanModel.setEResult(result.get(2));
+                    oceanModel.setAResult(result.get(3));
+                    oceanModel.setNResult(result.get(4));
+
+                    UserModel userModel = new UserModel();
+                    userModel.setUsername(Constants.Username);
+                    userModel.setOceanResult(oceanModel);
+
+                    Call<StatusModel> call2 = communicator.storeOceanResult(userModel);
+                    call2.enqueue(new StoreResultHandler());
                 }
-                result = Helper.calcPersonality(sortedResult);
-
-                loadingResultDialog.show();
-
-                //Then push to backend
-                OceanModel oceanModel = new OceanModel();
-                oceanModel.setOResult(result.get(0));
-                oceanModel.setCResult(result.get(1));
-                oceanModel.setEResult(result.get(2));
-                oceanModel.setAResult(result.get(3));
-                oceanModel.setNResult(result.get(4));
-
-                UserModel userModel = new UserModel();
-                userModel.setUsername(Constants.Username);
-                userModel.setPassword("");
-                userModel.setOceanResult(oceanModel);
-                userModel.setAptitudeResult(null);
-
-                Call<StatusModel> call2 = communicator.storeOceanResult(userModel);
-                call2.enqueue(new StoreResultHandler());
                 break;
         }
     }
@@ -267,6 +259,7 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
             } else {
                 Toast.makeText(Quiz_layout.this, "Error!!", Toast.LENGTH_LONG).show();
             }
+            finish();
             loadingResultDialog.dismiss();
         }
 

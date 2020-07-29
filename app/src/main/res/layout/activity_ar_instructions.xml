@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:paddingHorizontal="14dp"
+            android:text="In this test, there are 30 questions. You will see rows of designs or figures like those given below in the example.\nEach row consists of four figures called Problem Figures followed by Answer Figures which have four options- A, B, C and D. The Problem Figures follow a certain sequence. You need to find out which one of the Answer Figures would be the next in the sequence of Problem Figures. \nLook at the following example:\n\nExample -"
+            android:textColor="@color/darkerGray"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/example_question"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_below="@+id/textview1"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/ar_example_question" />
+
+        <ImageView
+            android:id="@+id/example_options"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:layout_below="@+id/example_question"
+            android:layout_marginHorizontal="20dp"
+            android:src="@drawable/ar_example_options" />
+
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/example_options"
+            android:layout_marginTop="5dp"
+            android:paddingHorizontal="14dp"
+            android:text="In the above example, note that each of the four problem figures has a shape with a dot. As you can see the dot in the problem figures moves anti-clockwise. So, the correct option in the answer figure would be the one in which the dot shows the next anti-clockwise position.\nIn this example, right answer is “D”, therefore, select the circle of option D in the answer.\n\nPractice Item -"
+            android:textColor="@color/darkerGray"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/practice_question"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_below="@+id/textview2"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/ar_practice_question" />
+
+        <ImageView
+            android:id="@+id/practice_options"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_below="@+id/practice_question"
+            android:layout_marginHorizontal="20dp"
+            android:src="@drawable/ar_practice_options" />
+
+        <TextView
+            android:id="@+id/textview3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/practice_options"
+            android:layout_marginTop="5dp"
+            android:paddingHorizontal="14dp"
+            android:text="Here, the correct answer is “B”.\n\nYou will have 10 mins for this test. Work as quickly as possible."
+            android:textColor="@color/darkerGray"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/startTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/newblue"
+            android:padding="12dp"
+            android:text="Start test"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+</ScrollView>

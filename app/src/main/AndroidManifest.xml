@@ -5,14 +5,27 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/icon"
         android:label="Psychool"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".StartInstructions"></activity>
+        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".Subtopics_Main" />
+        <activity android:name=".GradResults" />
+        <activity android:name=".Account" />
+        <activity android:name=".GradAptitudeMain" />
+        <activity android:name=".GradTestLayout" />
+        <activity android:name=".AR_Instructions" />
+        <activity android:name=".SA_Instructions" />
+        <activity android:name=".GradMainActivity" />
+        <activity android:name=".TestChecklist" />
+        <activity android:name=".About" />
+        <activity android:name=".ARandSATest" />
+        <activity android:name=".AptitudeResult" />
+        <activity android:name=".StartInstructions" />
         <activity android:name=".AptitudeQuizLayout" />
         <activity android:name=".AptitudeMain" />
         <activity android:name=".Results" />

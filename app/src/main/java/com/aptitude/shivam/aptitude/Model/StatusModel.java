@@ -17,6 +17,16 @@ public class StatusModel {
     @Expose
     private String id;
 
+    @SerializedName("user_type")
+    @Expose
+    private String user_type;
+
+    @SerializedName("email")
+    @Expose
+    private String email;
+
+    private Integer result;
+
     public String getStatus() {
         return status;
     }
@@ -39,5 +49,29 @@ public class StatusModel {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getUser_type() {
+        return user_type;
+    }
+
+    public void setUser_type(String user_type) {
+        this.user_type = user_type;
+    }
+
+    public Integer getResult() {
+        return result;
+    }
+
+    public void setResult(Integer result) {
+        this.result = result;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newblue">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="37dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="18dp"
+                    android:text="About the Big 5 Test"
+                    android:textColor="@color/textcolor"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="20dp"
+                    android:text="The Big Five test is a way of describing personality. Multiple psychological studies have pointed out the fact that the difference between people’s personalities can be organised into the following 5 categories."
+                    android:textColor="@color/textcolor"
+                    android:textSize="19dp"/>
+
+                <TextView
+                    android:id="@+id/O_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="18dp"
+                    android:text="Openness"
+                    android:textColor="@color/textcolor"
+                    android:textSize="19dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/O_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/O_title"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Openness describes a person’s tendency to think in abstract, complex ways. High scorers tend to be creative, adventurous, and intellectual. They enjoy playing with ideas and discovering novel experiences. Low scorers tend to be practical, conventional and focused on the concrete. They tend to avoid the unknown and follow traditional ways.\n\nOpenness is strongly related to a person’s interest in art and culture. People who are high in openness tend to enjoy the arts and seek out unusual, complex forms of self-expression. People who are low in openness are often suspicious of the arts and prefer to focus on more practical pursuits."
+                    android:textColor="@color/textcolor"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/C_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/O_description"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Conscientiousness"
+                    android:textColor="@color/textcolor"
+                    android:textSize="19dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/C_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/C_title"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Conscientiousness describes a person’s ability to exercise self-discipline and control to pursue their goals. High scorers are organized and determined and can forego immediate gratification for the sake of long-term achievement. Low scorers are impulsive and easily sidetracked.\n\nThe concept of Conscientiousness focuses on a dilemma we all face: shall I do what feels good now, or instead do what is less fun but will pay off in the future? Some people are more likely to choose fun at the moment, and thus are low in Conscientiousness. Others are more likely to work doggedly toward their goals, and thus are high in this trait."
+                    android:textColor="@color/textcolor"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/E_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/C_description"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Extroversion"
+                    android:textColor="@color/textcolor"
+                    android:textSize="19dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/E_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/E_title"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Extraversion describes a person’s inclination to seek stimulation from the outside world, especially in the form of attention from other people. Extroverts engage actively with others to earn friendship, admiration, power, status, excitement, and romance. Introverts, on the other hand, conserve their energy and do not work as hard to earn these social rewards.\n\nExtraversion seems to be related to the emotional payoff that a person gets from achieving a goal. While everyone experiences victories in life, it seems that extroverts are especially thrilled by these victories, especially when they earn the attention of others. Getting a promotion, finding a new romance, or winning an award are all likely to bring an extrovert great joy. In contrast, introverts do not experience as much of a “high” from social achievements. They tend to be more content with simple, quiet lives, and rarely seek attention from others."
+                    android:textColor="@color/textcolor"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/A_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/E_description"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Agreeableness"
+                    android:textColor="@color/textcolor"
+                    android:textSize="19dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/A_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/A_title"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Agreeableness describes a person’s tendency to put others’ needs ahead of their own and to cooperate rather than compete with others. People who are high in Agreeableness experience a great deal of empathy and tend to get pleasure out of serving and taking care of others. They are usually trusting and forgiving.\n\nPeople who are low in Agreeableness tend to experience less empathy and put their concerns ahead of others. Low scorers are often described as hostile, competitive, and antagonistic. They tend to have more conflictual relationships and often fall out with people."
+                    android:textColor="@color/textcolor"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/N_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/A_description"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Neuroticism"
+                    android:textColor="@color/textcolor"
+                    android:textSize="19dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/N_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/N_title"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="17dp"
+                    android:text="Neuroticism describes a person’s tendency to experience negative emotions, including fear, sadness, anxiety, guilt, and shame. While everyone experiences these emotions from time to time, some people are more prone to them than others.\n\nThis trait can be thought of as an alarm system. People experience negative emotions as a sign that something is wrong in the world. You may be in danger, so you feel fear. Or you may have done something morally wrong, so you feel guilty. However, not everyone has the same reaction to a given situation. High Neuroticism scorers are more likely to react to a situation with fear, anger, sadness, and the like. Low Neuroticism scorers are more likely to brush off their misfortune and move on."
+                    android:textColor="@color/textcolor"
+                    android:textSize="17dp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_below="@+id/card" />
+
+    </RelativeLayout>
+</ScrollView>

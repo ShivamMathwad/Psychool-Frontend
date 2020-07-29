@@ -11,20 +11,21 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingVertical="13dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
             android:text="Your Personality Trait Scores"
             android:textColor="@color/darkerGray"
             android:textSize="24dp" />
 
         <RelativeLayout
+            android:id="@+id/relative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
             android:paddingHorizontal="10dp"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="23dp">
 
             <TextView
                 android:id="@+id/O_attribute"
@@ -213,6 +214,119 @@
                 android:text="60%"
                 android:textColor="@color/darkerGray"
                 android:textSize="19dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/O_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Openness"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/O_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/O_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/C_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/O_description"
+                android:layout_marginTop="16dp"
+                android:text="2. Conscientiousness"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/C_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/C_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/E_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/C_description"
+                android:layout_marginTop="16dp"
+                android:text="3. Extroversion"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/E_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/E_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/A_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/E_description"
+                android:layout_marginTop="16dp"
+                android:text="4. Agreeableness"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/A_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/A_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/N_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/A_description"
+                android:layout_marginTop="16dp"
+                android:text="5. Neuroticism"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/N_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/N_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
 
         </RelativeLayout>
 

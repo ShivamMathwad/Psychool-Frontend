@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AptitudeResult"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:text="Your Test Score"
+            android:textColor="@color/darkerGray"
+            android:textSize="26dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            app:cardElevation="13dp"
+            app:cardCornerRadius="15dp">
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="22dp"
+                android:gravity="center"
+                android:text="94%"
+                android:background="@color/newblue"
+                android:textColor="@color/white"
+                android:textSize="30dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/test_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="24dp"
+            android:text="Numerical Aptitude Test"
+            android:textColor="@color/darkerGray"
+            android:textStyle="bold"
+            android:textSize="21dp"/>
+
+        <TextView
+            android:id="@+id/test_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/test_type"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="25dp"
+            android:text="Numerical aptitude refers to understanding numerical relationships and applying the same to the issue/ problem. It is related to a student’s ability to do mathematical operations quickly and accurately.  This sub-test assesses how well a student is able to solve problems covering four primary arithmetic operations like addition, subtraction, multiplication and division.  At the same time, it also covers areas like ratio, percentage, square and square root, cube and cube root, number sequence, factorization, linear equation, work and speed, etc.\n\nNumerical aptitude is relevant for success in courses and occupations related to all types of engineering, architecture, oceanography, geology, meteorology, biosciences, health sciences and of course statistics and natural sciences. "
+            android:textColor="@color/darkerGray"
+            android:textSize="18dp"/>
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,11 +1,14 @@
 package com.aptitude.shivam.aptitude.Network;
 
 import com.aptitude.shivam.aptitude.Model.AptitudeQuestionModel;
+import com.aptitude.shivam.aptitude.Model.ForgotPasswordModel;
 import com.aptitude.shivam.aptitude.Model.OceanModel;
 import com.aptitude.shivam.aptitude.Model.OceanQuestionModel;
 import com.aptitude.shivam.aptitude.Model.QuizModel;
 import com.aptitude.shivam.aptitude.Model.StatusModel;
+import com.aptitude.shivam.aptitude.Model.TestStatusModel;
 import com.aptitude.shivam.aptitude.Model.UserModel;
+import com.aptitude.shivam.aptitude.Model.UserModelGrad;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -32,14 +35,17 @@ public  class NetworkClient {
         @POST("/login")
         Call<StatusModel> login(@Body UserModel model);
 
-        @GET("/getNAQuestions")
-        Call<List<AptitudeQuestionModel>> getNAQuestions();
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/forgot_password")
+        Call<StatusModel> forgotPassword(@Body ForgotPasswordModel model);
 
-        @GET("/getPAQuestions")
-        Call<List<AptitudeQuestionModel>> getPAQuestions();
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/changePassword")
+        Call<StatusModel> changePassword(@Body UserModel model);
 
-        @GET("/getQuestions")
-        Call<List<OceanQuestionModel>> getOceanQuestions();
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/checkTestStatus")
+        Call<TestStatusModel> checkTestStatus(@Body UserModel model);
 
         @Headers({"Accept: application/json", "Content-Type: application/json"})
         @POST("/storeOceanResult")
@@ -48,6 +54,124 @@ public  class NetworkClient {
         @Headers({"Accept: application/json", "Content-Type: application/json"})
         @POST("/getOceanResult")
         Call<OceanModel> getOceanResult(@Body UserModel model);
+
+        @GET("/getNAQuestions")
+        Call<List<AptitudeQuestionModel>> getNAQuestions();
+
+        @GET("/getPAQuestions")
+        Call<List<AptitudeQuestionModel>> getPAQuestions();
+
+        @GET("/getVRQuestions")
+        Call<List<AptitudeQuestionModel>> getVRQuestions();
+
+        @GET("/getQuestions")
+        Call<List<OceanQuestionModel>> getOceanQuestions();
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeNAresult")
+        Call<StatusModel> storeNAresult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getNAresult")
+        Call<StatusModel> getNAresult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storePAresult")
+        Call<StatusModel> storePAresult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getPAresult")
+        Call<StatusModel> getPAresult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeVRresult")
+        Call<StatusModel> storeVRresult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getVRresult")
+        Call<StatusModel> getVRresult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeARresult")
+        Call<StatusModel> storeARresult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getARresult")
+        Call<StatusModel> getARresult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeSAresult")
+        Call<StatusModel> storeSAresult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getSAresult")
+        Call<StatusModel> getSAresult(@Body UserModel model);
+
+        @GET("/getMedicalQuestions")
+        Call<List<AptitudeQuestionModel>> getMedicalQuestions();
+
+        @GET("/getPoliticalQuestions")
+        Call<List<AptitudeQuestionModel>> getPoliticalQuestions();
+
+        @GET("/getManagementQuestions")
+        Call<List<AptitudeQuestionModel>> getManagementQuestions();
+
+        @GET("/getComputerQuestions")
+        Call<List<AptitudeQuestionModel>> getComputerQuestions();
+
+        @GET("/getMechanicalQuestions")
+        Call<List<AptitudeQuestionModel>> getMechanicalQuestions();
+
+        @GET("/getAerospaceQuestions")
+        Call<List<AptitudeQuestionModel>> getAerospaceQuestions();
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeMedicalResult")
+        Call<StatusModel> storeMedicalResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storePoliticalResult")
+        Call<StatusModel> storePoliticalResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeManagementResult")
+        Call<StatusModel> storeManagementResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeComputerResult")
+        Call<StatusModel> storeComputerResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeMechanicalResult")
+        Call<StatusModel> storeMechanicalResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeAerospaceResult")
+        Call<StatusModel> storeAerospaceResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getMedicalResult")
+        Call<StatusModel> getMedicalResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getPoliticalResult")
+        Call<StatusModel> getPoliticalResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getManagementResult")
+        Call<StatusModel> getManagementResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getComputerResult")
+        Call<StatusModel> getComputerResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getMechanicalResult")
+        Call<StatusModel> getMechanicalResult(@Body UserModelGrad model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getAerospaceResult")
+        Call<StatusModel> getAerospaceResult(@Body UserModelGrad model);
     }
 
     public static ServerCommunicator getCommunicator(String url){
@@ -67,6 +191,5 @@ public  class NetworkClient {
 
         return retrofit.create(ServerCommunicator.class);
     }
-
 
 }

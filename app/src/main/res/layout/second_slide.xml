@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSlide2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="37dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="18dp"
+                    android:text="About Us"
+                    android:textColor="@color/textcolor"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="This application was created by the members of Team Psycool for the grand finale of Smart India Hackathon(SIH), 2020 Software Edition. Smart India Hackathon is a nationwide initiative to provide students with a platform to solve some of the pressing problems we face in our daily lives, and thus inculcate a culture of product innovation and a mindset of problem-solving. And in the said competition there are multiple problem statements to work on and a team has to choose one of those. Our problem statement was “To develop a psychometric and aptitude test software for different levels of students like school, graduates and dropout students applying artificial intelligence tools, which will help them for the future career counselling purpose.” \nFollowing that problem statement, this app was created by our team. The team comprises of 6 students from Marathwada Mitra Mandal’s College of Engineering, Pune’s IT department.\n\nTeam Members:-\n  1)  Shivam Mathwad\n  2)  Abhishek Lalwani\n  3)  Shruti Bhagwat\n  4)  Harsh Gangawane\n  5)  Rutuja Khire\n  6)  Bhagyesh Hatwalne"
+                    android:textSize="18dp"
+                    android:textColor="@color/textcolor"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_below="@+id/card"/>
+
+    </RelativeLayout>
+</ScrollView>

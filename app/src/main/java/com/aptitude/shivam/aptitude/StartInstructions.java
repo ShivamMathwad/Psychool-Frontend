@@ -37,6 +37,7 @@ public class StartInstructions extends AppCompatActivity implements View.OnClick
 
         switch (v.getId()){
             case R.id.startTest:
+                finish();
                 startActivity(new Intent(StartInstructions.this, AptitudeQuizLayout.class));
                 break;
         }

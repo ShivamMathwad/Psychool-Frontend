@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/personality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:foreground="?android:selectableItemBackground"
+            android:elevation="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="12dp"
+                android:text="Personality Test Result"
+                android:textColor="@color/textcolor"
+                android:textSize="21dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/political"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/personality"
+            android:layout_marginTop="25dp"
+            android:foreground="?android:selectableItemBackground"
+            android:elevation="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="12dp"
+                android:text="Public &amp; Political Affairs Aptitude Test  Result"
+                android:textAlignment="center"
+                android:textColor="@color/textcolor"
+                android:textSize="21dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/engineering"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/political"
+            android:layout_marginTop="25dp"
+            android:foreground="?android:selectableItemBackground"
+            android:elevation="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="12dp"
+                android:text="Engineering Aptitude Tests Result"
+                android:textColor="@color/textcolor"
+                android:textSize="21dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/medical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/engineering"
+            android:layout_marginTop="25dp"
+            android:foreground="?android:selectableItemBackground"
+            android:elevation="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="12dp"
+                android:text="Medical Aptitude Test Result"
+                android:textColor="@color/textcolor"
+                android:textSize="21dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/management"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/medical"
+            android:layout_marginTop="25dp"
+            android:foreground="?android:selectableItemBackground"
+            android:elevation="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="12dp"
+                android:text="Management Aptitude Test Result"
+                android:textColor="@color/textcolor"
+                android:textSize="21dp" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

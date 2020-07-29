@@ -2,17 +2,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
-    >
+    android:background="@color/gray">
 
     <RelativeLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        android:padding="10dp"
-        tools:context=".Results">
+        android:padding="10dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/numerical"
@@ -28,7 +23,6 @@
                 android:text="Numerical Aptitude"
                 android:textColor="@color/textcolor"
                 android:textSize="25dp" />
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -47,8 +41,60 @@
                 android:text="Perceptual Aptitude"
                 android:textColor="@color/textcolor"
                 android:textSize="25dp" />
-
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/AR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/perceptual"
+            android:layout_marginTop="25dp"
+            android:elevation="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="9dp"
+                android:text="Abstract Reasoning"
+                android:textColor="@color/textcolor"
+                android:textSize="25dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/spatial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/AR"
+            android:layout_marginTop="25dp"
+            android:elevation="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="9dp"
+                android:text="Spatial Aptitude"
+                android:textColor="@color/textcolor"
+                android:textSize="25dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/verbal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spatial"
+            android:layout_marginTop="25dp"
+            android:elevation="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="9dp"
+                android:text="Verbal Reasoning"
+                android:textColor="@color/textcolor"
+                android:textSize="25dp" />
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 </ScrollView>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:paddingHorizontal="14dp"
+            android:text="This test consists of Part 1 and Part 2.\n\nPART 1 -\n\nPart 1 has 20 items (Questions 1-20). Read instructions given at the top of each page carefully.\nEach item consists of a Problem Figure followed by Answer Figures. Each Answer Figure has four options- A, B, C and D. Only one among them is right answer. Select the right answer.\n\nExample X -\nFind out which options- A, B, C and D from the Answer Figures has parts that can make the Problem Figure."
+            android:textColor="@color/darkerGray"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/example_question"
+            android:layout_width="102dp"
+            android:layout_height="85dp"
+            android:layout_below="@+id/textview1"
+            android:layout_marginTop="7dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/sa_example1_question" />
+
+        <ImageView
+            android:id="@+id/example_options"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_below="@+id/example_question"
+            android:layout_marginHorizontal="55dp"
+            android:src="@drawable/sa_example1_options" />
+
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/example_options"
+            android:layout_marginTop="5dp"
+            android:paddingHorizontal="14dp"
+            android:text="When we arrange the parts given in the Answer Figure, only option “A” correctly forms the Problem Figure. Therefore, option “A” is the right answer. Select the circle of option A.\n\nPART 2 -\n\nPART 2 has 10 items (Questions 21-30).\nEach item has a Problem Figure followed by Answer Figures. You are required to imagine how a Problem Figure will look like when it is folded. Choose from the options given in the Answer Figures- A, B, C and D. Only one among the suggested options is correct.\n\nExample Y -"
+            android:textColor="@color/darkerGray"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/practice_question"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:layout_below="@+id/textview2"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/sa_example2_question" />
+
+        <ImageView
+            android:id="@+id/practice_options"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_below="@+id/practice_question"
+            android:layout_marginTop="7dp"
+            android:layout_marginHorizontal="20dp"
+            android:src="@drawable/sa_example2_options" />
+
+        <TextView
+            android:id="@+id/textview3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/practice_options"
+            android:layout_marginTop="4dp"
+            android:paddingHorizontal="14dp"
+            android:text="When the Problem Figure is folded such that the bottom most side (with a dot) is the top then the side above it (which has a small square on it) will be visible in front and the side (with no pattern on the outside) will be on the right side. Thus option “A” is the most appropriate option. Select the circle of option A in the options.\n\nYou will have 10 Minutes for this test, Part 1 and 2. Work as quickly as possible."
+            android:textColor="@color/darkerGray"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/startTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/newblue"
+            android:padding="12dp"
+            android:text="Start test"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+</ScrollView>

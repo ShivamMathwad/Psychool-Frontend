@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@mipmap/background2"
     tools:context=".Login">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/logo"
@@ -21,17 +20,31 @@
             android:layout_marginTop="35dp"
             android:layout_below="@+id/actionbar"
             android:layout_centerHorizontal="true"
-            android:src="@mipmap/main_icon" />
+            android:src="@mipmap/icon2" />
 
+        <TextView
+            android:id="@+id/psycool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:text="PSYCOOL"
+            android:textColor="@color/white"
+            android:textSize="40dp" />
 
         <EditText
             android:id="@+id/username"
             android:layout_width="215dp"
             android:layout_height="50dp"
-            android:layout_below="@id/logo"
+            android:layout_below="@id/psycool"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:hint="Enter Username" />
+            android:background="@drawable/rectangle_1"
+            android:textAlignment="center"
+            android:layout_marginTop="40dp"
+            android:hint="Enter Username"
+            android:textColorHint="@color/white"
+            android:elevation="12dp"/>
 
         <EditText
             android:id="@+id/password"
@@ -39,21 +52,37 @@
             android:layout_height="50dp"
             android:layout_below="@+id/username"
             android:layout_centerHorizontal="true"
+            android:background="@drawable/rectangle_1"
+            android:textAlignment="center"
             android:layout_marginTop="30dp"
             android:hint="Enter Password"
+            android:textColorHint="@color/white"
+            android:elevation="12dp"
             android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_alignLeft="@+id/password"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="10dp"
+            android:text="Forgot Password?"
+            android:textSize="17dp"
+            android:textColor="@color/lightBlue"/>
 
         <Button
             android:id="@+id/login"
             android:layout_width="215dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/password"
+            android:layout_below="@+id/forgot_password"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="65dp"
             android:text="Login"
-            android:background="#eaeaea"
+            android:background="@drawable/rounded_border"
             android:foreground="?android:selectableItemBackground"
-            android:textColor="@color/darkBlue"
+            android:textColor="@color/white"
             android:textSize="17dp" />
 
         <TextView
@@ -64,8 +93,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="60dp"
-            android:text="Dont have an account? Register"
-            android:textColor="@color/darkBlue"
+            android:fontFamily="@font/kite_one"
+            android:text="Don't have an account? REGISTER"
+            android:textColor="@color/white"
             android:textSize="19dp" />
 
     </RelativeLayout>

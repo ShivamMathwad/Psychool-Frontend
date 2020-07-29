@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSlide3">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="37dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="18dp"
+                    android:text="About Aptitude Test"
+                    android:textColor="@color/textcolor"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="An aptitude test is a systematic means of testing a job candidate's abilities to perform specific tasks and react to a range of different situations.\nThe tests each have a standardized method of administration and scoring.\nIn the App, we have used Tamanna (Try And Measure Aptitude And Natural Abilities) Aptitude Test by CBSE and NCERT for class 9th to 12th, as it is a standard test verified by professionals and it would be easier for students from all over the country to give it because of its standardized nature.\nThe test will assess strengths of students and there is no criteria such as fail or pass. Scoring, assessment and evaluation will be carried out in accordance with the details provided in the 'Teachers and Parents Guide' booklet of Tamanna."
+                    android:textSize="18dp"
+                    android:textColor="@color/textcolor"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_below="@+id/card"/>
+
+    </RelativeLayout>
+</ScrollView>
