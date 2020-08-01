@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:elevation="3dp"
-    android:background="#ffffff">
+    android:layout_height="52dp"
+    android:elevation="12dp"
+    android:background="@drawable/rectangle_2">
 
     <TextView
         android:id="@+id/actionbarText"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/macondo"
         android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:text="Psychool"
-        android:textSize="23dp"
-        android:textColor="@color/darkBlue" />
+        android:text="PSYCOOL"
+        android:textColor="@color/white"
+        android:textSize="36sp" />
 
 </RelativeLayout>

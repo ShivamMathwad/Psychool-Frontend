@@ -5,6 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="redEngine">#CB202D</color>
     <color name="blackEngine">#2D2D2D</color>
+    <color name="newblack">#21282E</color>
     <color name="white">#ffffff</color>
     <color name="textcolor">#232b2b</color>
     <color name="offWhite">#fafad2</color>
@@ -13,11 +14,14 @@
     <color name="darkerGray">#3A3939</color>
     <color name="blue">#00BFFF</color>
     <color name="newblue">#1A95F9</color>
+    <color name="optionblue">#CBE2F7</color>
     <color name="lightBlue">#ADD8E6</color>
     <color name="darkBlue">#1071BC</color>
     <color name="backdrop">#03000000</color>
     <color name="transparent">#E8FFFFFF</color>
     <color name="green">#4CAF50</color>
+    <color name="newgreen">#35E2AE</color>
+    <color name="green2">#35E246</color>
 
     <color name="colorSlide1">#009688</color>
     <color name="colorSlide2">#795548</color>

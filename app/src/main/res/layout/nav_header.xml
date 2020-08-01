@@ -2,26 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/lightBlue"
+    android:background="@drawable/gradient2"
     android:orientation="vertical"
     android:padding="19dp"
     android:theme="@style/ThemeOverlay.AppCompat">
 
     <ImageView
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginLeft="7dp"
-        android:src="@mipmap/account" />
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/ic_account" />
 
     <TextView
         android:id="@+id/nav_header_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="1dp"
         android:text="John Doe"
         android:textSize="17dp"
-        android:textColor="@color/darkerGray"
+        android:textColor="@color/white"
         android:textStyle="bold"/>
 
 </LinearLayout>

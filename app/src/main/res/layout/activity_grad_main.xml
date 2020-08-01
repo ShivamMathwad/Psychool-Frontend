@@ -167,7 +167,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="110dp"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/result" />
+                                android:src="@mipmap/result" />
 
                             <View
                                 android:layout_width="match_parent"

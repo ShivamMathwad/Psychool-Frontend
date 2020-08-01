@@ -3,133 +3,196 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <include
-        android:id="@+id/actionbar"
-        layout="@layout/action_bar" />
+    android:layout_height="match_parent"
+    android:background="#9CC9F3">
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/actionbar">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="30dp"
+                app:cardBackgroundColor="@color/optionblue"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/question"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginHorizontal="22dp"
+                        android:layout_marginTop="20dp"
+                        android:elevation="10dp"
+                        android:gravity="center"
+                        android:text="1. I am the life of party"
+                        android:textColor="@color/textcolor"
+                        android:textSize="24dp" />
+
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_below="@+id/question"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginRight="9dp"
+                        android:layout_marginBottom="7dp"
+                        android:src="@mipmap/brain1" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_option1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_below="@+id/card"
+                android:layout_marginTop="40dp"
+                android:layout_marginHorizontal="25dp"
+                app:cardBackgroundColor="@color/optionblue"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="12dp">
 
                 <TextView
-                    android:id="@+id/question"
+                    android:id="@+id/option1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:paddingHorizontal="15dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginBottom="20dp"
-                    android:elevation="10dp"
-                    android:gravity="center"
-                    android:text="NULL"
-                    android:textColor="@color/textcolor"
-                    android:textSize="25dp" />
+                    android:layout_height="match_parent"
+                    android:paddingLeft="35dp"
+                    android:paddingVertical="7dp"
+                    android:text="Disagree"
+                    android:textSize="23dp"
+                    android:foreground="?android:selectableItemBackground"
+                    android:textColor="@color/textcolor"/>
+            </androidx.cardview.widget.CardView>
 
-                <RadioGroup
-                    android:id="@+id/RadioGroup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="35dp"
-                    android:orientation="vertical"
-                    android:padding="15dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_option2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/card_option1"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="25dp"
+                app:cardBackgroundColor="@color/optionblue"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="12dp">
 
-                    <androidx.appcompat.widget.AppCompatRadioButton
-                        android:id="@+id/option1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@color/colorPrimaryDark"
-                        android:elevation="5dp"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="Disagree"
-                        android:textColor="@color/textcolor"
-                        android:textSize="22dp" />
+                <TextView
+                    android:id="@+id/option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="35dp"
+                    android:paddingVertical="7dp"
+                    android:text="Slightly Disagree"
+                    android:textSize="23dp"
+                    android:foreground="?android:selectableItemBackground"
+                    android:textColor="@color/textcolor"/>
+            </androidx.cardview.widget.CardView>
 
-                    <androidx.appcompat.widget.AppCompatRadioButton
-                        android:id="@+id/option2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:buttonTint="@color/colorPrimaryDark"
-                        android:elevation="5dp"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="Slightly Disagree"
-                        android:textColor="@color/textcolor"
-                        android:textSize="22dp" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_option3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/card_option2"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="25dp"
+                app:cardBackgroundColor="@color/optionblue"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="12dp">
 
-                    <androidx.appcompat.widget.AppCompatRadioButton
-                        android:id="@+id/option3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:buttonTint="@color/colorPrimaryDark"
-                        android:elevation="5dp"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="Neutral"
-                        android:textColor="@color/textcolor"
-                        android:textSize="22dp" />
+                <TextView
+                    android:id="@+id/option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="35dp"
+                    android:paddingVertical="7dp"
+                    android:text="Neutral"
+                    android:textSize="23dp"
+                    android:foreground="?android:selectableItemBackground"
+                    android:textColor="@color/textcolor"/>
+            </androidx.cardview.widget.CardView>
 
-                    <androidx.appcompat.widget.AppCompatRadioButton
-                        android:id="@+id/option4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:buttonTint="@color/colorPrimaryDark"
-                        android:elevation="5dp"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="Slightly Agree"
-                        android:textColor="@color/textcolor"
-                        android:textSize="22dp" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_option4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/card_option3"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="25dp"
+                app:cardBackgroundColor="@color/optionblue"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="12dp">
 
-                    <androidx.appcompat.widget.AppCompatRadioButton
-                        android:id="@+id/option5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:buttonTint="@color/colorPrimaryDark"
-                        android:elevation="5dp"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="Agree"
-                        android:textColor="@color/textcolor"
-                        android:textSize="22dp" />
-                </RadioGroup>
+                <TextView
+                    android:id="@+id/option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="35dp"
+                    android:paddingVertical="7dp"
+                    android:text="Slightly Agree"
+                    android:textSize="23dp"
+                    android:foreground="?android:selectableItemBackground"
+                    android:textColor="@color/textcolor"/>
+            </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_option5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/card_option4"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginHorizontal="25dp"
+                app:cardBackgroundColor="@color/optionblue"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="12dp">
+
+                <TextView
+                    android:id="@+id/option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="35dp"
+                    android:paddingVertical="7dp"
+                    android:text="Agree"
+                    android:textSize="23dp"
+                    android:foreground="?android:selectableItemBackground"
+                    android:textColor="@color/textcolor"/>
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
     </ScrollView>
 
     <RelativeLayout
+        android:id="@+id/bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <LinearLayout
-            android:id="@+id/linear"
+        <RelativeLayout
+            android:id="@+id/relative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
+            android:layout_marginTop="13dp">
 
             <ImageView
                 android:id="@+id/prevButton"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginRight="17dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="60dp"
                 android:background="@drawable/previous"
                 android:clickable="true"
                 android:foreground="?selectableItemBackground" />
@@ -138,18 +201,20 @@
                 android:id="@+id/nextButton"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="60dp"
                 android:background="@drawable/next"
                 android:clickable="true"
                 android:foreground="?selectableItemBackground" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/submit"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@+id/linear"
-            android:layout_marginTop="30dp"
+            android:layout_below="@+id/relative"
+            android:layout_marginTop="21dp"
             android:clickable="true"
             android:elevation="8dp"
             android:foreground="?android:selectableItemBackground"
@@ -162,7 +227,7 @@
                 android:gravity="center"
                 android:text="Submit"
                 android:textColor="@color/white"
-                android:textSize="25dp" />
+                android:textSize="26dp" />
 
         </androidx.cardview.widget.CardView>
 

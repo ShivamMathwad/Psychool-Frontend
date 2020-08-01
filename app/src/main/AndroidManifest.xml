@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".Subtopics_Result"></activity>
+        <activity android:name=".ForgotPassword" />
         <activity android:name=".Subtopics_Main" />
         <activity android:name=".GradResults" />
         <activity android:name=".Account" />

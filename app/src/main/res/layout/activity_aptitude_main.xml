@@ -2,18 +2,21 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient2">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/numerical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="7dp">
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="30dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -31,7 +34,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/numerical"
             android:layout_marginTop="25dp"
-            android:elevation="7dp">
+            android:layout_marginHorizontal="30dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,7 +54,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/perceptual"
             android:layout_marginTop="25dp"
-            android:elevation="7dp">
+            android:layout_marginHorizontal="30dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +74,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/AR"
             android:layout_marginTop="25dp"
-            android:elevation="7dp">
+            android:layout_marginHorizontal="30dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -85,7 +94,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/spatial"
             android:layout_marginTop="25dp"
-            android:elevation="7dp">
+            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="30dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="12dp">
 
             <TextView
                 android:layout_width="wrap_content"

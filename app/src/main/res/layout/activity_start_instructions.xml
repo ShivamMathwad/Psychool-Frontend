@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".StartInstructions"
+    android:background="#111111"
     android:fillViewport="true">
 
     <RelativeLayout
@@ -12,27 +13,49 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/test_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/nova_cut"
+            android:text="Numerical Aptitude"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
             android:id="@+id/textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/test_title"
             android:paddingHorizontal="14dp"
             android:layout_marginTop="22dp"
             android:text="This is instructions text"
-            android:textSize="18dp"/>
+            android:textSize="18dp"
+            android:textColor="@color/white"/>
 
-        <Button
+        <androidx.cardview.widget.CardView
             android:id="@+id/startTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textview"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="33dp"
             android:layout_marginBottom="30dp"
-            android:padding="12dp"
-            android:background="@color/newblue"
-            android:text="Start test"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:layout_centerHorizontal="true"/>
+            app:cardBackgroundColor="@color/newblue"
+            app:cardElevation="7dp"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="22dp"
+                android:text="START TEST"
+                android:textColor="@color/white"
+                android:textSize="18dp"/>
+        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 

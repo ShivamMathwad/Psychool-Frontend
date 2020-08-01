@@ -14,7 +14,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.aptitude.shivam.aptitude.Model.OceanModel;
+import com.aptitude.shivam.aptitude.Model.StatusModel;
 import com.aptitude.shivam.aptitude.Model.UserModel;
+import com.aptitude.shivam.aptitude.Model.UserModelGrad;
 import com.aptitude.shivam.aptitude.Network.NetworkClient;
 import com.aptitude.shivam.aptitude.Utils.Constants;
 import com.aptitude.shivam.aptitude.Utils.Helper;
@@ -54,32 +56,36 @@ public class GradResults extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         communicator = NetworkClient.getCommunicator(Constants.SERVER_URL);
-        UserModel userModel = new UserModel();
+        UserModelGrad userModel = new UserModelGrad();
         userModel.setUsername(Constants.Username);
         loadingDialog.show();
 
         switch (v.getId()){
             case R.id.personality:
-                Call<OceanModel> call = communicator.getOceanResult(userModel);
+                UserModel model = new UserModel();
+                model.setUsername(Constants.Username);
+
+                Call<OceanModel> call = communicator.getOceanResult(model);
                 call.enqueue(new OceanResultHandler());
                 break;
 
             case R.id.engineering:
-                /*
-                loadingDialog.show();
-
-                Constants.test_type = "NA";
-                Call<List<AptitudeQuestionModel>> call = communicator.getNAQuestions();
-                call.enqueue(new AptitudeMain.NAQuestionHandler());*/
+                startActivity(new Intent(GradResults.this, Subtopics_Result.class));
                 break;
 
             case R.id.medical:
+                Call<StatusModel> call2 = communicator.getMedicalResult(userModel);
+                call2.enqueue(new MedicalResultHandler());
                 break;
 
             case R.id.political:
+                Call<StatusModel> call3 = communicator.getPoliticalResult(userModel);
+                call3.enqueue(new PoliticalResultHandler());
                 break;
 
             case R.id.management:
+                Call<StatusModel> call4 = communicator.getManagementResult(userModel);
+                call4.enqueue(new ManagementResultHandler());
                 break;
         }
     }
@@ -108,6 +114,81 @@ public class GradResults extends AppCompatActivity implements View.OnClickListen
         }
         @Override
         public void onFailure(Call<OceanModel> call, Throwable t) {
+            Log.d("TAG","Error :"+t.getMessage());
+            loadingDialog.dismiss();
+            Toast.makeText(GradResults.this, "Error! No Internet..", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private class MedicalResultHandler implements Callback<StatusModel> {
+        @Override
+        public void onResponse(Call<StatusModel> call, Response<StatusModel> response) {
+            StatusModel statusModel = response.body();
+            //Check if test is given
+            if(statusModel.getStatus().equals("Test Not Given")){
+                Toast.makeText(GradResults.this, "Test not given, please give the test first!", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(GradResults.this, AptitudeResult.class);
+                intent.putExtra("result", statusModel.getResult());
+                intent.putExtra("testType", "Medical Aptitude");
+                intent.putExtra("description", "");
+                startActivity(intent);
+                finish();
+            }
+            loadingDialog.dismiss();
+        }
+        @Override
+        public void onFailure(Call<StatusModel> call, Throwable t) {
+            Log.d("TAG","Error :"+t.getMessage());
+            loadingDialog.dismiss();
+            Toast.makeText(GradResults.this, "Error! No Internet..", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private class PoliticalResultHandler implements Callback<StatusModel> {
+        @Override
+        public void onResponse(Call<StatusModel> call, Response<StatusModel> response) {
+            StatusModel statusModel = response.body();
+            //Check if test is given
+            if(statusModel.getStatus().equals("Test Not Given")){
+                Toast.makeText(GradResults.this, "Test not given, please give the test first!", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(GradResults.this, AptitudeResult.class);
+                intent.putExtra("result", statusModel.getResult());
+                intent.putExtra("testType", "Public & Political Affairs Aptitude");
+                intent.putExtra("description", "");
+                startActivity(intent);
+                finish();
+            }
+            loadingDialog.dismiss();
+        }
+        @Override
+        public void onFailure(Call<StatusModel> call, Throwable t) {
+            Log.d("TAG","Error :"+t.getMessage());
+            loadingDialog.dismiss();
+            Toast.makeText(GradResults.this, "Error! No Internet..", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private class ManagementResultHandler implements Callback<StatusModel> {
+        @Override
+        public void onResponse(Call<StatusModel> call, Response<StatusModel> response) {
+            StatusModel statusModel = response.body();
+            //Check if test is given
+            if(statusModel.getStatus().equals("Test Not Given")){
+                Toast.makeText(GradResults.this, "Test not given, please give the test first!", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(GradResults.this, AptitudeResult.class);
+                intent.putExtra("result", statusModel.getResult());
+                intent.putExtra("testType", "Management Studies Aptitude");
+                intent.putExtra("description", "");
+                startActivity(intent);
+                finish();
+            }
+            loadingDialog.dismiss();
+        }
+        @Override
+        public void onFailure(Call<StatusModel> call, Throwable t) {
             Log.d("TAG","Error :"+t.getMessage());
             loadingDialog.dismiss();
             Toast.makeText(GradResults.this, "Error! No Internet..", Toast.LENGTH_LONG).show();

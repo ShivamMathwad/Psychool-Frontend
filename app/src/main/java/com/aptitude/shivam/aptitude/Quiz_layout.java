@@ -39,13 +39,12 @@ import static android.util.Log.d;
 
 public class Quiz_layout extends AppCompatActivity implements View.OnClickListener {
 
+    int img_counter = 1;
     int index = 0;
     int TOTAL_QUESTIONS = 50;
 
-    TextView questionView;
-    RadioButton option1, option2, option3, option4, option5;
-    RadioGroup rg;
-    ImageView nextButton, prevButton;
+    TextView questionView, option1, option2, option3, option4, option5;
+    ImageView nextButton, prevButton, image;
     CardView submitButton;
     QuizModel quizModel = new QuizModel();
     Map<Integer, Integer> map = new HashMap<>();
@@ -72,7 +71,7 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         option3 = findViewById(R.id.option3);
         option4 = findViewById(R.id.option4);
         option5 = findViewById(R.id.option5);
-        rg = findViewById(R.id.RadioGroup);
+        image = findViewById(R.id.image);
         nextButton = findViewById(R.id.nextButton);
         prevButton = findViewById(R.id.prevButton);
         submitButton = findViewById(R.id.submit);
@@ -83,6 +82,11 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         option4.setText(quizModel.option4);
         option5.setText(quizModel.option5);
 
+        option1.setOnClickListener(this);
+        option2.setOnClickListener(this);
+        option3.setOnClickListener(this);
+        option4.setOnClickListener(this);
+        option5.setOnClickListener(this);
         nextButton.setOnClickListener(this);
         prevButton.setOnClickListener(this);
         submitButton.setOnClickListener(this);
@@ -93,70 +97,81 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
         call.enqueue(new QuestionGetterHandler());
     }
 
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-        int weight = 0;
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.option1:   //Disagree
-                weight = 1;
-                break;
-
-            case R.id.option2:   //Slightly disagree
-                weight = 2;
-                break;
-
-            case R.id.option3:   //Neutral
-                weight = 3;
-                break;
-
-            case R.id.option4:   //Slightly agree
-                weight = 4;
-                break;
-
-            case R.id.option5:   //Agree
-                weight = 5;
-                break;
-        }
-
-        if (checked) {
-            map.put(index, weight);
-
-            if (map.size() == TOTAL_QUESTIONS)
-                submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
-        }
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.option1:
+                option1selected();
+                map.put(index, 1);  //Disagree
+
+                if (map.size() == TOTAL_QUESTIONS)
+                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                break;
+
+            case R.id.option2:
+                option2selected();
+                map.put(index, 2);  //Slightly Disagree
+
+                if (map.size() == TOTAL_QUESTIONS)
+                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                break;
+
+            case R.id.option3:
+                option3selected();
+                map.put(index, 3);  //Neutral
+
+                if (map.size() == TOTAL_QUESTIONS)
+                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                break;
+
+            case R.id.option4:
+                option4selected();
+                map.put(index, 4);  //Slightly Agree
+
+                if (map.size() == TOTAL_QUESTIONS)
+                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                break;
+
+            case R.id.option5:
+                option5selected();
+                map.put(index, 5);  //Agree
+
+                if (map.size() == TOTAL_QUESTIONS)
+                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                break;
+
             case R.id.nextButton:
                 index = (index + 1) % quizModel.questionsList.size();
+                img_counter++;
 
                 questionView.setText((index+1)+ ". " + quizModel.questionsList.get(index));
+                if(img_counter % 2 == 0){
+                    image.setImageResource(R.mipmap.brain2);
+                } else {
+                    image.setImageResource(R.mipmap.brain1);
+                }
 
                 if (map.containsKey(index)) {
                     int weight = map.get(index);
                     switch (weight) {
-                        case 1:
-                            rg.check(R.id.option1);
-                            break;
-                        case 2:
-                            rg.check(R.id.option2);
-                            break;
-                        case 3:
-                            rg.check(R.id.option3);
-                            break;
-                        case 4:
-                            rg.check(R.id.option4);
-                            break;
-                        case 5:
-                            rg.check(R.id.option5);
-                            break;
+                        case 1: option1selected();
+                                break;
+
+                        case 2: option2selected();
+                                break;
+
+                        case 3: option3selected();
+                                break;
+
+                        case 4: option4selected();
+                                break;
+
+                        case 5: option5selected();
+                                break;
                     }
-                } else
-                    rg.clearCheck();
+                } else {
+                    noOptionSelected();
+                }
                 break;
 
 
@@ -165,29 +180,36 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
                     index = quizModel.questionsList.size()-1;
                 else
                     index -=1;
+                img_counter++;
+
                 questionView.setText((index+1)+ ". " + quizModel.questionsList.get(index));
+                if(img_counter % 2 == 0){
+                    image.setImageResource(R.mipmap.brain2);
+                } else {
+                    image.setImageResource(R.mipmap.brain1);
+                }
 
                 if (map.containsKey(index)) {
                     int weight = map.get(index);
                     switch (weight) {
-                        case 1:
-                            rg.check(R.id.option1);
-                            break;
-                        case 2:
-                            rg.check(R.id.option2);
-                            break;
-                        case 3:
-                            rg.check(R.id.option3);
-                            break;
-                        case 4:
-                            rg.check(R.id.option4);
-                            break;
-                        case 5:
-                            rg.check(R.id.option5);
-                            break;
+                        case 1: option1selected();
+                                break;
+
+                        case 2: option2selected();
+                                break;
+
+                        case 3: option3selected();
+                                break;
+
+                        case 4: option4selected();
+                                break;
+
+                        case 5: option5selected();
+                                break;
                     }
-                } else
-                    rg.clearCheck();
+                } else {
+                    noOptionSelected();
+                }
                 break;
 
 
@@ -269,5 +291,83 @@ public class Quiz_layout extends AppCompatActivity implements View.OnClickListen
             loadingResultDialog.dismiss();
             Toast.makeText(Quiz_layout.this, "Error! No Internet..", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void option1selected() {
+        option2.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option3.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option4.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option5.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option1.setBackgroundColor(getResources().getColor(R.color.darkBlue));
+        option2.setTextColor(getResources().getColor(R.color.textcolor));
+        option3.setTextColor(getResources().getColor(R.color.textcolor));
+        option4.setTextColor(getResources().getColor(R.color.textcolor));
+        option5.setTextColor(getResources().getColor(R.color.textcolor));
+        option1.setTextColor(getResources().getColor(R.color.white));
+    }
+
+    public void option2selected() {
+        option1.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option3.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option4.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option5.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option2.setBackgroundColor(getResources().getColor(R.color.darkBlue));
+        option1.setTextColor(getResources().getColor(R.color.textcolor));
+        option3.setTextColor(getResources().getColor(R.color.textcolor));
+        option4.setTextColor(getResources().getColor(R.color.textcolor));
+        option5.setTextColor(getResources().getColor(R.color.textcolor));
+        option2.setTextColor(getResources().getColor(R.color.white));
+    }
+
+    public void option3selected() {
+        option1.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option2.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option4.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option5.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option3.setBackgroundColor(getResources().getColor(R.color.darkBlue));
+        option1.setTextColor(getResources().getColor(R.color.textcolor));
+        option2.setTextColor(getResources().getColor(R.color.textcolor));
+        option4.setTextColor(getResources().getColor(R.color.textcolor));
+        option5.setTextColor(getResources().getColor(R.color.textcolor));
+        option3.setTextColor(getResources().getColor(R.color.white));
+    }
+
+    public void option4selected() {
+        option1.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option2.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option3.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option5.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option4.setBackgroundColor(getResources().getColor(R.color.darkBlue));
+        option1.setTextColor(getResources().getColor(R.color.textcolor));
+        option2.setTextColor(getResources().getColor(R.color.textcolor));
+        option3.setTextColor(getResources().getColor(R.color.textcolor));
+        option5.setTextColor(getResources().getColor(R.color.textcolor));
+        option4.setTextColor(getResources().getColor(R.color.white));
+    }
+
+    public void option5selected(){
+        option1.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option2.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option3.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option4.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option5.setBackgroundColor(getResources().getColor(R.color.darkBlue));
+        option1.setTextColor(getResources().getColor(R.color.textcolor));
+        option2.setTextColor(getResources().getColor(R.color.textcolor));
+        option3.setTextColor(getResources().getColor(R.color.textcolor));
+        option4.setTextColor(getResources().getColor(R.color.textcolor));
+        option5.setTextColor(getResources().getColor(R.color.white));
+    }
+
+    public void noOptionSelected() {
+        option1.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option2.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option3.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option4.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option5.setBackgroundColor(getResources().getColor(R.color.optionblue));
+        option1.setTextColor(getResources().getColor(R.color.textcolor));
+        option2.setTextColor(getResources().getColor(R.color.textcolor));
+        option3.setTextColor(getResources().getColor(R.color.textcolor));
+        option4.setTextColor(getResources().getColor(R.color.textcolor));
+        option5.setTextColor(getResources().getColor(R.color.textcolor));
     }
 }

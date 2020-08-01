@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:background="@mipmap/blue_background"
+    android:background="@mipmap/background2"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -17,21 +17,22 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="52dp"
             android:padding="0dp"
-            android:elevation="3dp"
-            android:background="#ffffff"
+            android:elevation="12dp"
+            android:background="@drawable/rectangle_2"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                 <TextView
                     android:id="@+id/actionbarText"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="102dp"
+                    android:layout_marginLeft="90dp"
                     android:gravity="center"
-                    android:text="Psychool"
-                    android:textColor="@color/darkBlue"
-                    android:textSize="23dp" />
+                    android:fontFamily="@font/macondo"
+                    android:text="PSYCOOL"
+                    android:textColor="@color/white"
+                    android:textSize="32sp" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -50,26 +51,27 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
+                    android:layout_gravity="center_horizontal"
                     android:gravity="center_horizontal"
-                    android:src="@mipmap/account" />
+                    android:src="@mipmap/user" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
                     android:gravity="center_horizontal"
                     android:text="John Doe"
-                    android:textColor="#232b2b"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:textSize="20dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="19dp"
+                    android:layout_marginHorizontal="30dp"
                     android:layout_marginTop="60dp"
                     android:orientation="horizontal"
                     android:weightSum="100">
@@ -78,10 +80,11 @@
                         android:id="@+id/aptitude_card"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="15dp"
+                        android:layout_marginRight="20dp"
                         android:layout_weight="50"
                         android:padding="2dp"
-                        app:cardCornerRadius="5dp">
+                        app:cardCornerRadius="13dp"
+                        app:cardElevation="12dp">
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
@@ -92,7 +95,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="110dp"
                                 android:scaleType="centerCrop"
-                                android:src="@mipmap/aptitude_icon" />
+                                android:src="@mipmap/aptitude" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/aptitude"
+                                android:background="#232b2b" />
 
                             <TextView
                                 android:layout_width="fill_parent"
@@ -101,7 +110,8 @@
                                 android:gravity="center_horizontal"
                                 android:text="Aptitude test"
                                 android:textColor="@color/textcolor"
-                                android:textSize="17dp" />
+                                android:textStyle="bold"
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -109,10 +119,11 @@
                         android:id="@+id/personality_card"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="50"
                         android:padding="2dp"
-                        app:cardCornerRadius="5dp">
+                        app:cardCornerRadius="13dp"
+                        app:cardElevation="12dp">
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
@@ -138,7 +149,8 @@
                                 android:gravity="center_horizontal"
                                 android:text="Personality test"
                                 android:textColor="@color/textcolor"
-                                android:textSize="17dp" />
+                                android:textStyle="bold"
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -147,7 +159,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="19dp"
+                    android:layout_marginHorizontal="30dp"
                     android:layout_marginTop="40dp"
                     android:orientation="horizontal"
                     android:weightSum="100">
@@ -156,10 +168,11 @@
                         android:id="@+id/result_card"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="15dp"
+                        android:layout_marginRight="20dp"
                         android:layout_weight="50"
                         android:padding="2dp"
-                        app:cardCornerRadius="5dp">
+                        app:cardCornerRadius="13dp"
+                        app:cardElevation="12dp">
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
@@ -170,7 +183,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="110dp"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/result" />
+                                android:src="@mipmap/result2" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -185,7 +198,8 @@
                                 android:gravity="center_horizontal"
                                 android:text="Result"
                                 android:textColor="@color/textcolor"
-                                android:textSize="17dp" />
+                                android:textStyle="bold"
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -193,10 +207,11 @@
                         android:id="@+id/job_card"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="50"
                         android:padding="2dp"
-                        app:cardCornerRadius="5dp">
+                        app:cardCornerRadius="13dp"
+                        app:cardElevation="12dp">
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
@@ -206,7 +221,7 @@
                                 android:id="@+id/job_recommend"
                                 android:layout_width="match_parent"
                                 android:layout_height="110dp"
-                                android:padding="20dp"
+                                android:scaleType="centerCrop"
                                 android:src="@mipmap/job" />
 
                             <View
@@ -222,7 +237,8 @@
                                 android:gravity="center_horizontal"
                                 android:text="Job Recommendation"
                                 android:textColor="@color/textcolor"
-                                android:textSize="17dp" />
+                                android:textStyle="bold"
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
 
