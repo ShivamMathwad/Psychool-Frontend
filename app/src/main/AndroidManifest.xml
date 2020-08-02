@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Subtopics_Result"></activity>
+        <activity android:name=".InterestResult"></activity>
+        <activity android:name=".InterestTestLayout" />
+        <activity android:name=".PersonalityMain" />
+        <activity android:name=".Subtopics_Result" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".Subtopics_Main" />
         <activity android:name=".GradResults" />

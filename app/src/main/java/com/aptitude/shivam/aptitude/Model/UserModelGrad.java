@@ -20,6 +20,9 @@ public class UserModelGrad {
     @SerializedName("ocean_result")
     @Expose
     private OceanModel oceanResult;
+    @SerializedName("raisec_result")
+    @Expose
+    private RaisecModel raisecResult;
     @SerializedName("medical")
     @Expose
     private Integer medical;
@@ -127,20 +130,11 @@ public class UserModelGrad {
         this.aerospace = aerospace;
     }
 
-    @Override
-    public String toString() {
-        return "UserModelGrad{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", userType='" + userType + '\'' +
-                ", oceanResult=" + oceanResult +
-                ", medical=" + medical +
-                ", management=" + management +
-                ", political=" + political +
-                ", computer=" + computer +
-                ", mechanical=" + mechanical +
-                ", aerospace=" + aerospace +
-                '}';
+    public RaisecModel getRaisecResult() {
+        return raisecResult;
+    }
+
+    public void setRaisecResult(RaisecModel raisecResult) {
+        this.raisecResult = raisecResult;
     }
 }

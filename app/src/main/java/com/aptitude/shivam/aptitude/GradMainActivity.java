@@ -80,7 +80,7 @@ public class GradMainActivity extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.personality_card:
-                startActivity(new Intent(this, Quiz_layout.class));
+                startActivity(new Intent(this, PersonalityMain.class));
                 break;
 
             case R.id.result_card:

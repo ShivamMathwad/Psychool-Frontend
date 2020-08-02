@@ -23,6 +23,9 @@ public class UserModel {
     @SerializedName("ocean_result")
     @Expose
     private OceanModel oceanResult;
+    @SerializedName("raisec_result")
+    @Expose
+    private RaisecModel raisecResult;
     @SerializedName("numerical")
     @Expose
     private Integer numerical;
@@ -119,19 +122,11 @@ public class UserModel {
         this.verbal = verbal;
     }
 
-    @Override
-    public String toString() {
-        return "UserModel{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", userType='" + userType + '\'' +
-                ", oceanResult=" + oceanResult +
-                ", numerical=" + numerical +
-                ", perceptual=" + perceptual +
-                ", abstractApti=" + abstractApti +
-                ", spatial=" + spatial +
-                ", verbal=" + verbal +
-                '}';
+    public RaisecModel getRaisecResult() {
+        return raisecResult;
+    }
+
+    public void setRaisecResult(RaisecModel raisecResult) {
+        this.raisecResult = raisecResult;
     }
 }

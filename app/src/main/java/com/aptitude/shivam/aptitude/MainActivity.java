@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.personality_card:
-                startActivity(new Intent(MainActivity.this, Quiz_layout.class));
+                startActivity(new Intent(MainActivity.this, PersonalityMain.class));
                 break;
 
             case R.id.result_card:

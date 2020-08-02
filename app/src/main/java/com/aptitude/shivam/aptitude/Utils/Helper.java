@@ -77,6 +77,37 @@ public class Helper {
         return result;
     }
 
+    public static ArrayList calcInterest(ArrayList<Integer> arr){
+        ArrayList<Integer> result = new ArrayList<>();
+        float realistic, investigative, artistic, social, enterprising, conventional;
+        realistic=investigative=artistic=social=enterprising=conventional=0;
+
+        //arr = Arrays.asList(2,2,3,4,5,3,4,1,4,2,3,1,4,4,4,4,5,1,3,5,4,2,3,3,4,3,4,1,2,2,4,4,5,1,4,3,2,3,1,2,4,4,3,1,4,4,4,4,3,3);
+
+        realistic     = arr.get(0)+arr.get(6)+arr.get(13)+arr.get(21)+arr.get(29)+arr.get(31)+arr.get(36);
+        investigative = arr.get(1)+arr.get(10)+arr.get(17)+arr.get(20)+arr.get(25)+arr.get(32)+arr.get(38);
+        artistic      = arr.get(2)+arr.get(7)+arr.get(16)+arr.get(22)+arr.get(26)+arr.get(30)+arr.get(40);
+        social        = arr.get(3)+arr.get(11)+arr.get(12)+arr.get(19)+arr.get(27)+arr.get(33)+arr.get(39);
+        enterprising  = arr.get(4)+arr.get(9)+arr.get(15)+arr.get(18)+arr.get(28)+arr.get(35)+arr.get(41);
+        conventional  = arr.get(5)+arr.get(8)+arr.get(14)+arr.get(23)+arr.get(24)+arr.get(34)+arr.get(37);
+
+        realistic     = (realistic/35)*100;
+        artistic      = (artistic/35)*100;
+        investigative = (investigative/35)*100;
+        social        = (social/35)*100;
+        enterprising  = (enterprising/35)*100;
+        conventional  = (conventional/35)*100;
+
+        result.add(round(realistic));
+        result.add(round(artistic));
+        result.add(round(investigative));
+        result.add(round(social));
+        result.add(round(enterprising));
+        result.add(round(conventional));
+
+        return result;
+    }
+
     public static Integer calcAptitudeScore(Map<Integer,String> map){
         float score = 0;
         int result;

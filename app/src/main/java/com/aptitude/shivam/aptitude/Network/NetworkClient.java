@@ -5,6 +5,8 @@ import com.aptitude.shivam.aptitude.Model.ForgotPasswordModel;
 import com.aptitude.shivam.aptitude.Model.OceanModel;
 import com.aptitude.shivam.aptitude.Model.OceanQuestionModel;
 import com.aptitude.shivam.aptitude.Model.QuizModel;
+import com.aptitude.shivam.aptitude.Model.RaisecModel;
+import com.aptitude.shivam.aptitude.Model.RaisecQuestionModel;
 import com.aptitude.shivam.aptitude.Model.StatusModel;
 import com.aptitude.shivam.aptitude.Model.TestStatusModel;
 import com.aptitude.shivam.aptitude.Model.UserModel;
@@ -47,6 +49,9 @@ public  class NetworkClient {
         @POST("/checkTestStatus")
         Call<TestStatusModel> checkTestStatus(@Body UserModel model);
 
+        @GET("/getQuestions")
+        Call<List<OceanQuestionModel>> getOceanQuestions();
+
         @Headers({"Accept: application/json", "Content-Type: application/json"})
         @POST("/storeOceanResult")
         Call<StatusModel> storeOceanResult(@Body UserModel model);
@@ -54,6 +59,17 @@ public  class NetworkClient {
         @Headers({"Accept: application/json", "Content-Type: application/json"})
         @POST("/getOceanResult")
         Call<OceanModel> getOceanResult(@Body UserModel model);
+
+        @GET("/getInterestQuestions")
+        Call<List<RaisecQuestionModel>> getInterestQuestions();
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/storeRaisecResult")
+        Call<StatusModel> storeRaisecResult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getRaisecResult")
+        Call<RaisecModel> getRaisecResult(@Body UserModel model);
 
         @GET("/getNAQuestions")
         Call<List<AptitudeQuestionModel>> getNAQuestions();
@@ -63,9 +79,6 @@ public  class NetworkClient {
 
         @GET("/getVRQuestions")
         Call<List<AptitudeQuestionModel>> getVRQuestions();
-
-        @GET("/getQuestions")
-        Call<List<OceanQuestionModel>> getOceanQuestions();
 
         @Headers({"Accept: application/json", "Content-Type: application/json"})
         @POST("/storeNAresult")
