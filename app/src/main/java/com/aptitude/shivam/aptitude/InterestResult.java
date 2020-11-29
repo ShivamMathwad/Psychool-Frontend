@@ -57,10 +57,10 @@ public class InterestResult extends AppCompatActivity {
         e_progressbar = findViewById(R.id.E_progressbar);
         c_progressbar = findViewById(R.id.C_progressbar);
 
-        r_progress = findViewById(R.id.O_progress);
-        i_progress = findViewById(R.id.N_progress);
+        r_progress = findViewById(R.id.R_progress);
+        i_progress = findViewById(R.id.I_progress);
         a_progress = findViewById(R.id.A_progress);
-        s_progress = findViewById(R.id.N_progress);
+        s_progress = findViewById(R.id.S_progress);
         e_progress = findViewById(R.id.E_progress);
         c_progress = findViewById(R.id.C_progress);
 

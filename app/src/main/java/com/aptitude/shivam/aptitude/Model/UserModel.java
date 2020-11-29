@@ -20,6 +20,9 @@ public class UserModel {
     @SerializedName("user_type")
     @Expose
     private String userType;
+    @SerializedName("recommendation")
+    @Expose
+    private List<String> recommendation;
     @SerializedName("ocean_result")
     @Expose
     private OceanModel oceanResult;
@@ -128,5 +131,13 @@ public class UserModel {
 
     public void setRaisecResult(RaisecModel raisecResult) {
         this.raisecResult = raisecResult;
+    }
+
+    public List<String> getRecommendation() {
+        return recommendation;
+    }
+
+    public void setRecommendation(List<String> recommendation) {
+        this.recommendation = recommendation;
     }
 }

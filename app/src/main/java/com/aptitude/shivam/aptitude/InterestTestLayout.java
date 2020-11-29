@@ -10,6 +10,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -216,11 +217,10 @@ public class InterestTestLayout extends AppCompatActivity implements View.OnClic
                     //First calculate result
                     ArrayList<Integer> sortedResult = new ArrayList<>();
                     //Sort the hashmap according to keys(i.e index) and store only values in list
-                    for(int i=0;i<50;i++){
+                    for(int i=0;i<42;i++){
                         sortedResult.add(map.get(i));
                     }
-                    result = Helper.calcPersonality(sortedResult);
-
+                    result = Helper.calcInterest(sortedResult);
                     loadingResultDialog.show();
 
                     //Then push to backend
@@ -255,7 +255,6 @@ public class InterestTestLayout extends AppCompatActivity implements View.OnClic
             questionView.setText((index+1)+ ". " + quizModel.questionsList.get(index));
             loadingQuestionDialog.dismiss();
         }
-
         @Override
         public void onFailure(Call<List<RaisecQuestionModel>> call, Throwable t) {
             d("TAG","Error :"+t.getMessage());
@@ -281,7 +280,6 @@ public class InterestTestLayout extends AppCompatActivity implements View.OnClic
             finish();
             loadingResultDialog.dismiss();
         }
-
         @Override
         public void onFailure(Call<StatusModel> call, Throwable t) {
             d("TAG","Error :"+t.getMessage());

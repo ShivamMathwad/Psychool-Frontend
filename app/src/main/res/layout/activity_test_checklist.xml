@@ -18,7 +18,7 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="25dp"
             android:layout_centerHorizontal="true"
-            android:text="Complete all the following tests to get accurate job suggestions"
+            android:text="Complete all the following tests to get accurate career suggestions"
             android:textSize="20dp"
             android:textColor="@color/textcolor"/>
         
@@ -179,7 +179,7 @@
             android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:background="@color/newblue"
-            android:text="Suggest me some jobs"
+            android:text="Suggest me some careers"
             android:textColor="@color/white"
             android:textSize="18dp"
             android:textAllCaps="false"/>

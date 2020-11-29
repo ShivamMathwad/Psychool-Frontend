@@ -235,7 +235,7 @@
                                 android:layout_height="22dp"
                                 android:layout_below="@+id/job_recommend"
                                 android:gravity="center_horizontal"
-                                android:text="Job Recommendation"
+                                android:text="Recommendation"
                                 android:textColor="@color/textcolor"
                                 android:textStyle="bold"
                                 android:textSize="16dp" />

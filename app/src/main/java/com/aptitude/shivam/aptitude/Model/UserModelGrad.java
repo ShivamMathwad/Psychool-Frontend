@@ -3,6 +3,8 @@ package com.aptitude.shivam.aptitude.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class UserModelGrad {
 
     @SerializedName("username")
@@ -17,6 +19,9 @@ public class UserModelGrad {
     @SerializedName("user_type")
     @Expose
     private String userType;
+    @SerializedName("recommendation")
+    @Expose
+    private List<String> recommendation;
     @SerializedName("ocean_result")
     @Expose
     private OceanModel oceanResult;
@@ -136,5 +141,13 @@ public class UserModelGrad {
 
     public void setRaisecResult(RaisecModel raisecResult) {
         this.raisecResult = raisecResult;
+    }
+
+    public List<String> getRecommendation() {
+        return recommendation;
+    }
+
+    public void setRecommendation(List<String> recommendation) {
+        this.recommendation = recommendation;
     }
 }

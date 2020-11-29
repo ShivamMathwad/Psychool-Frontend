@@ -1,5 +1,7 @@
 package com.aptitude.shivam.aptitude.Network;
 
+import com.aptitude.shivam.aptitude.Model.AllScoresFloatModel;
+import com.aptitude.shivam.aptitude.Model.AllScoresModel;
 import com.aptitude.shivam.aptitude.Model.AptitudeQuestionModel;
 import com.aptitude.shivam.aptitude.Model.ForgotPasswordModel;
 import com.aptitude.shivam.aptitude.Model.OceanModel;
@@ -46,8 +48,16 @@ public  class NetworkClient {
         Call<StatusModel> changePassword(@Body UserModel model);
 
         @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/careerRecommendation")
+        Call<List<String>> getCareerRecommendation(@Body AllScoresFloatModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
         @POST("/checkTestStatus")
         Call<TestStatusModel> checkTestStatus(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getAllScores")
+        Call<AllScoresModel> getAllScores(@Body UserModel model);
 
         @GET("/getQuestions")
         Call<List<OceanQuestionModel>> getOceanQuestions();

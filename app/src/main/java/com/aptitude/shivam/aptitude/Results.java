@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.aptitude.shivam.aptitude.Model.OceanModel;
+import com.aptitude.shivam.aptitude.Model.RaisecModel;
 import com.aptitude.shivam.aptitude.Model.StatusModel;
 import com.aptitude.shivam.aptitude.Model.UserModel;
 import com.aptitude.shivam.aptitude.Network.NetworkClient;
@@ -27,7 +28,7 @@ import static android.util.Log.d;
 
 public class Results extends AppCompatActivity implements View.OnClickListener {
 
-    CardView personality_result, numerical_result, perceptual_result, abstract_result, spatial_result, verbal_result;
+    CardView personality_result, numerical_result, perceptual_result, abstract_result, spatial_result, verbal_result, interest_result;
     Dialog loadingDialog;
     NetworkClient.ServerCommunicator communicator;
 
@@ -48,6 +49,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener {
         abstract_result = findViewById(R.id.abstract_result);
         spatial_result = findViewById(R.id.spatial_result);
         verbal_result = findViewById(R.id.verbal_result);
+        interest_result = findViewById(R.id.interest_result);
 
         personality_result.setOnClickListener(this);
         numerical_result.setOnClickListener(this);
@@ -55,6 +57,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener {
         abstract_result.setOnClickListener(this);
         spatial_result.setOnClickListener(this);
         verbal_result.setOnClickListener(this);
+        interest_result.setOnClickListener(this);
     }
 
     @Override
@@ -94,6 +97,42 @@ public class Results extends AppCompatActivity implements View.OnClickListener {
                 Call<StatusModel> call6 = communicator.getSAresult(userModel);
                 call6.enqueue(new SAresultHandler());
                 break;
+
+            case R.id.interest_result:
+                Call<RaisecModel> call7 = communicator.getRaisecResult(userModel);
+                call7.enqueue(new InterestResultHandler());
+                break;
+        }
+    }
+
+    private class InterestResultHandler implements Callback<RaisecModel> {
+        @Override
+        public void onResponse(Call<RaisecModel> call, Response<RaisecModel> response) {
+            RaisecModel raisecModel = response.body();
+
+            //All traits zero means user has not given the test
+            if(raisecModel.getrResult()==0 && raisecModel.getaResult()==0 && raisecModel.getiResult()==0 && raisecModel.getsResult()==0 && raisecModel.geteResult()==0 && raisecModel.getcResult()==0){
+                Toast.makeText(Results.this, "Test not given, please give the test first!", Toast.LENGTH_LONG).show();
+            } else {
+                ArrayList<Integer> result = new ArrayList<>();
+                result.add(raisecModel.getrResult());
+                result.add(raisecModel.getaResult());
+                result.add(raisecModel.getiResult());
+                result.add(raisecModel.getsResult());
+                result.add(raisecModel.geteResult());
+                result.add(raisecModel.getcResult());
+                Intent intent = new Intent(Results.this, InterestResult.class);
+                intent.putIntegerArrayListExtra("result",result);
+                startActivity(intent);
+                finish();
+            }
+            loadingDialog.dismiss();
+        }
+        @Override
+        public void onFailure(Call<RaisecModel> call, Throwable t) {
+            Log.d("TAG","Error :"+t.getMessage());
+            loadingDialog.dismiss();
+            Toast.makeText(Results.this, "Error! No Internet..", Toast.LENGTH_LONG).show();
         }
     }
 

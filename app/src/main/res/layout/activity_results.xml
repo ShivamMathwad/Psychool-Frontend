@@ -112,6 +112,23 @@
                 android:textSize="25dp" />
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/interest_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spatial_result"
+            android:layout_marginTop="25dp"
+            android:elevation="7dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="9dp"
+                android:text="Interest Test Result"
+                android:textColor="@color/textcolor"
+                android:textSize="25dp" />
+        </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
 
 </ScrollView>

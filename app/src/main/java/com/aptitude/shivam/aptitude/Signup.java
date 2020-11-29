@@ -91,8 +91,8 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
     public boolean validate() {
         boolean flag = true;
 
-        if (str_username.length() < 2) {
-            username.setError("Username must be more than 1 character");
+        if (str_username.length() < 2 || str_username.contains(" ")) {
+            username.setError("Username must be more than 1 character and cannot contain spaces");
             flag = false;
         }
         if (str_password.length() < 2) {
