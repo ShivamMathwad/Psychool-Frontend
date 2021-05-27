@@ -102,7 +102,7 @@ public class InterestTestLayout extends AppCompatActivity implements View.OnClic
                 map.put(index, 1);  //Disagree
 
                 if (map.size() == TOTAL_QUESTIONS)
-                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                    submitButton.setCardBackgroundColor(Color.rgb(53, 226, 70));
                 break;
 
             case R.id.option2:
@@ -110,7 +110,7 @@ public class InterestTestLayout extends AppCompatActivity implements View.OnClic
                 map.put(index, 2);  //Slightly Disagree
 
                 if (map.size() == TOTAL_QUESTIONS)
-                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                    submitButton.setCardBackgroundColor(Color.rgb(53, 226, 70));
                 break;
 
             case R.id.option3:
@@ -118,7 +118,7 @@ public class InterestTestLayout extends AppCompatActivity implements View.OnClic
                 map.put(index, 3);  //Neutral
 
                 if (map.size() == TOTAL_QUESTIONS)
-                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                    submitButton.setCardBackgroundColor(Color.rgb(53, 226, 70));
                 break;
 
             case R.id.option4:
@@ -126,7 +126,7 @@ public class InterestTestLayout extends AppCompatActivity implements View.OnClic
                 map.put(index, 4);  //Slightly Agree
 
                 if (map.size() == TOTAL_QUESTIONS)
-                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                    submitButton.setCardBackgroundColor(Color.rgb(53, 226, 70));
                 break;
 
             case R.id.option5:
@@ -134,7 +134,7 @@ public class InterestTestLayout extends AppCompatActivity implements View.OnClic
                 map.put(index, 5);  //Agree
 
                 if (map.size() == TOTAL_QUESTIONS)
-                    submitButton.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                    submitButton.setCardBackgroundColor(Color.rgb(53, 226, 70));
                 break;
 
             case R.id.nextButton:

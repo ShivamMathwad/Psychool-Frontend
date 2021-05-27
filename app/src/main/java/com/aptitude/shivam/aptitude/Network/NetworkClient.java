@@ -52,6 +52,10 @@ public  class NetworkClient {
         Call<List<String>> getCareerRecommendation(@Body AllScoresFloatModel model);
 
         @Headers({"Accept: application/json", "Content-Type: application/json"})
+        @POST("/getRecommendationResult")
+        Call<List<String>> getRecommendationResult(@Body UserModel model);
+
+        @Headers({"Accept: application/json", "Content-Type: application/json"})
         @POST("/checkTestStatus")
         Call<TestStatusModel> checkTestStatus(@Body UserModel model);
 

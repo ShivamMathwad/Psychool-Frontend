@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/lightBlue"
+    tools:context=".CareerDetails">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/career_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="Mathematics And Analysis"
+            android:textSize="21dp"
+            android:textStyle="bold"
+            android:textColor="@color/blackEngine"/>
+
+        <TextView
+            android:id="@+id/desc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/career_name"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="35dp"
+            android:text="Description:"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/blackEngine"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc_title"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="Expand knowledge in mathematical areas, such as algebra or geometry, by developing new rules, theories, and concepts. Use mathematical formulas and models to prove or disprove theories."
+            android:textSize="17dp"
+            android:textColor="@color/blackEngine"/>
+
+        <TextView
+            android:id="@+id/jobs_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/description"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Jobs:"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/blackEngine"/>
+
+        <TextView
+            android:id="@+id/jobs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jobs_title"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="1) Acoustic consultant\n2) Actuarial analyst\n3) Investment analyst\n4) Research scientist (maths)\n5) Statistician"
+            android:textSize="17dp"
+            android:textColor="@color/blackEngine"/>
+
+        <TextView
+            android:id="@+id/uni_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jobs"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Best Universities:"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/blackEngine"/>
+
+        <TextView
+            android:id="@+id/universities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uni_title"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="1) Amity School of Actuarial Science\n2) Christ University\n3) Presidency University\n4) Indian Institute of Management Bangalore"
+            android:textSize="17dp"
+            android:textColor="@color/blackEngine"/>
+
+        <TextView
+            android:id="@+id/skills_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/universities"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Skills Required:"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/blackEngine"/>
+
+        <TextView
+            android:id="@+id/skills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/skills_title"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="30dp"
+            android:text="1) Noise modelling skills, including familiarity with noise modelling software.\n2) Excellent written and verbal skills, including technical report writing skills.\n3) A logical and creative approach to problem solving."
+            android:textSize="17dp"
+            android:textColor="@color/blackEngine"/>
+
+    </RelativeLayout>
+</ScrollView>

@@ -24,14 +24,12 @@ public class InterestResult extends AppCompatActivity {
 
         init();
 
-        /*
-        r_description.setText(Constants.O_description);
-        i_description.setText(Constants.O_description);
-        a_description.setText(Constants.A_description);
-        s_description.setText(Constants.N_description);
-        e_description.setText(Constants.E_description);
-        c_description.setText(Constants.C_description);
-         */
+        r_description.setText(Constants.R_desc);
+        i_description.setText(Constants.I_desc);
+        a_description.setText(Constants.A_desc);
+        s_description.setText(Constants.S_desc);
+        e_description.setText(Constants.E_desc);
+        c_description.setText(Constants.C_desc);
 
         result = getIntent().getIntegerArrayListExtra("result");
 
@@ -64,13 +62,12 @@ public class InterestResult extends AppCompatActivity {
         e_progress = findViewById(R.id.E_progress);
         c_progress = findViewById(R.id.C_progress);
 
-        /*
         r_description = findViewById(R.id.R_description);
         i_description = findViewById(R.id.I_description);
         a_description = findViewById(R.id.A_description);
         s_description = findViewById(R.id.S_description);
         e_description = findViewById(R.id.E_description);
         c_description = findViewById(R.id.C_description);
-         */
     }
+
 }

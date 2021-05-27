@@ -90,7 +90,7 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                 map.put(index, "A");
 
                 if (map.size() == TOTAL_QUESTIONS)
-                    submit.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                    submit.setCardBackgroundColor(Color.rgb(255, 69, 0));
                 break;
 
             case R.id.option2:
@@ -98,7 +98,7 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                 map.put(index, "B");
 
                 if (map.size() == TOTAL_QUESTIONS)
-                    submit.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                    submit.setCardBackgroundColor(Color.rgb(255, 69, 0));
                 break;
 
             case R.id.option3:
@@ -106,7 +106,7 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                 map.put(index, "C");
 
                 if (map.size() == TOTAL_QUESTIONS)
-                    submit.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                    submit.setCardBackgroundColor(Color.rgb(255, 69, 0));
                 break;
 
             case R.id.option4:
@@ -114,7 +114,7 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
                 map.put(index, "D");
 
                 if (map.size() == TOTAL_QUESTIONS)
-                    submit.setCardBackgroundColor(Color.rgb(0, 191, 255));
+                    submit.setCardBackgroundColor(Color.rgb(255, 69, 0));
                 break;
 
 
@@ -379,10 +379,10 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
         option2.setBackgroundColor(getResources().getColor(R.color.white));
         option3.setBackgroundColor(getResources().getColor(R.color.white));
         option4.setBackgroundColor(getResources().getColor(R.color.white));
-        option1.setBackgroundColor(getResources().getColor(R.color.blue));
-        option2.setTextColor(getResources().getColor(R.color.darkBlue));
-        option3.setTextColor(getResources().getColor(R.color.darkBlue));
-        option4.setTextColor(getResources().getColor(R.color.darkBlue));
+        option1.setBackgroundColor(getResources().getColor(R.color.optionOrange));
+        option2.setTextColor(getResources().getColor(R.color.blackEngine));
+        option3.setTextColor(getResources().getColor(R.color.blackEngine));
+        option4.setTextColor(getResources().getColor(R.color.blackEngine));
         option1.setTextColor(getResources().getColor(R.color.white));
     }
 
@@ -390,10 +390,10 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
         option1.setBackgroundColor(getResources().getColor(R.color.white));
         option3.setBackgroundColor(getResources().getColor(R.color.white));
         option4.setBackgroundColor(getResources().getColor(R.color.white));
-        option2.setBackgroundColor(getResources().getColor(R.color.blue));
-        option1.setTextColor(getResources().getColor(R.color.darkBlue));
-        option3.setTextColor(getResources().getColor(R.color.darkBlue));
-        option4.setTextColor(getResources().getColor(R.color.darkBlue));
+        option2.setBackgroundColor(getResources().getColor(R.color.optionOrange));
+        option1.setTextColor(getResources().getColor(R.color.blackEngine));
+        option3.setTextColor(getResources().getColor(R.color.blackEngine));
+        option4.setTextColor(getResources().getColor(R.color.blackEngine));
         option2.setTextColor(getResources().getColor(R.color.white));
     }
 
@@ -401,10 +401,10 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
         option1.setBackgroundColor(getResources().getColor(R.color.white));
         option2.setBackgroundColor(getResources().getColor(R.color.white));
         option4.setBackgroundColor(getResources().getColor(R.color.white));
-        option3.setBackgroundColor(getResources().getColor(R.color.blue));
-        option1.setTextColor(getResources().getColor(R.color.darkBlue));
-        option2.setTextColor(getResources().getColor(R.color.darkBlue));
-        option4.setTextColor(getResources().getColor(R.color.darkBlue));
+        option3.setBackgroundColor(getResources().getColor(R.color.optionOrange));
+        option1.setTextColor(getResources().getColor(R.color.blackEngine));
+        option2.setTextColor(getResources().getColor(R.color.blackEngine));
+        option4.setTextColor(getResources().getColor(R.color.blackEngine));
         option3.setTextColor(getResources().getColor(R.color.white));
     }
 
@@ -412,10 +412,10 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
         option1.setBackgroundColor(getResources().getColor(R.color.white));
         option2.setBackgroundColor(getResources().getColor(R.color.white));
         option3.setBackgroundColor(getResources().getColor(R.color.white));
-        option4.setBackgroundColor(getResources().getColor(R.color.blue));
-        option1.setTextColor(getResources().getColor(R.color.darkBlue));
-        option2.setTextColor(getResources().getColor(R.color.darkBlue));
-        option3.setTextColor(getResources().getColor(R.color.darkBlue));
+        option4.setBackgroundColor(getResources().getColor(R.color.optionOrange));
+        option1.setTextColor(getResources().getColor(R.color.blackEngine));
+        option2.setTextColor(getResources().getColor(R.color.blackEngine));
+        option3.setTextColor(getResources().getColor(R.color.blackEngine));
         option4.setTextColor(getResources().getColor(R.color.white));
     }
 
@@ -424,10 +424,10 @@ public class AptitudeQuizLayout extends AppCompatActivity implements View.OnClic
         option2.setBackgroundColor(getResources().getColor(R.color.white));
         option3.setBackgroundColor(getResources().getColor(R.color.white));
         option4.setBackgroundColor(getResources().getColor(R.color.white));
-        option1.setTextColor(getResources().getColor(R.color.darkBlue));
-        option2.setTextColor(getResources().getColor(R.color.darkBlue));
-        option3.setTextColor(getResources().getColor(R.color.darkBlue));
-        option4.setTextColor(getResources().getColor(R.color.darkBlue));
+        option1.setTextColor(getResources().getColor(R.color.blackEngine));
+        option2.setTextColor(getResources().getColor(R.color.blackEngine));
+        option3.setTextColor(getResources().getColor(R.color.blackEngine));
+        option4.setTextColor(getResources().getColor(R.color.blackEngine));
     }
 
 }

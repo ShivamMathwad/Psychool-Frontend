@@ -25,7 +25,7 @@
                 android:padding="9dp"
                 android:text="Numerical Aptitude"
                 android:textColor="@color/textcolor"
-                android:textSize="25dp" />
+                android:textSize="24dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -45,7 +45,7 @@
                 android:padding="9dp"
                 android:text="Perceptual Aptitude"
                 android:textColor="@color/textcolor"
-                android:textSize="25dp" />
+                android:textSize="24dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -65,7 +65,7 @@
                 android:padding="9dp"
                 android:text="Abstract Reasoning"
                 android:textColor="@color/textcolor"
-                android:textSize="25dp" />
+                android:textSize="24dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -85,7 +85,7 @@
                 android:padding="9dp"
                 android:text="Spatial Aptitude"
                 android:textColor="@color/textcolor"
-                android:textSize="25dp" />
+                android:textSize="24dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -106,7 +106,7 @@
                 android:padding="9dp"
                 android:text="Verbal Reasoning"
                 android:textColor="@color/textcolor"
-                android:textSize="25dp" />
+                android:textSize="24dp" />
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 </ScrollView>

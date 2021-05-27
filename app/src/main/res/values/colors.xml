@@ -16,6 +16,7 @@
     <color name="newblue">#1A95F9</color>
     <color name="optionblue">#CBE2F7</color>
     <color name="lightBlue">#ADD8E6</color>
+    <color name="lightestBlue">#F3FAFB</color>
     <color name="darkBlue">#1071BC</color>
     <color name="backdrop">#03000000</color>
     <color name="transparent">#E8FFFFFF</color>
@@ -23,6 +24,7 @@
     <color name="newgreen">#35E2AE</color>
     <color name="green2">#35E246</color>
     <color name="optiongreen">#BFFAC5</color>
+    <color name="optionOrange">#FF4500</color>
 
     <color name="colorSlide1">#009688</color>
     <color name="colorSlide2">#795548</color>

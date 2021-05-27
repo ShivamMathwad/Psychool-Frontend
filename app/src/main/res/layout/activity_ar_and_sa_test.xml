@@ -165,19 +165,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/linear2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="11dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="11dp">
 
             <ImageView
                 android:id="@+id/prevButton"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginRight="17dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="60dp"
                 android:background="@drawable/previous"
                 android:clickable="true"
                 android:foreground="?selectableItemBackground" />
@@ -186,11 +185,13 @@
                 android:id="@+id/nextButton"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="60dp"
                 android:background="@drawable/next"
                 android:clickable="true"
                 android:foreground="?selectableItemBackground" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/submit"

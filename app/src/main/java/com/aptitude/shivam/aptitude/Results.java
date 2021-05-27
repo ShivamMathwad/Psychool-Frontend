@@ -23,12 +23,14 @@ import com.aptitude.shivam.aptitude.Utils.Constants;
 import com.aptitude.shivam.aptitude.Utils.Helper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static android.util.Log.d;
 
 public class Results extends AppCompatActivity implements View.OnClickListener {
 
     CardView personality_result, numerical_result, perceptual_result, abstract_result, spatial_result, verbal_result, interest_result;
+    CardView recommendation_result;
     Dialog loadingDialog;
     NetworkClient.ServerCommunicator communicator;
 
@@ -50,6 +52,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener {
         spatial_result = findViewById(R.id.spatial_result);
         verbal_result = findViewById(R.id.verbal_result);
         interest_result = findViewById(R.id.interest_result);
+        recommendation_result = findViewById(R.id.recommendation_result);
 
         personality_result.setOnClickListener(this);
         numerical_result.setOnClickListener(this);
@@ -58,6 +61,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener {
         spatial_result.setOnClickListener(this);
         verbal_result.setOnClickListener(this);
         interest_result.setOnClickListener(this);
+        recommendation_result.setOnClickListener(this);
     }
 
     @Override
@@ -102,6 +106,39 @@ public class Results extends AppCompatActivity implements View.OnClickListener {
                 Call<RaisecModel> call7 = communicator.getRaisecResult(userModel);
                 call7.enqueue(new InterestResultHandler());
                 break;
+
+            case R.id.recommendation_result:
+                Call<List<String>> call8 = communicator.getRecommendationResult(userModel);
+                call8.enqueue(new RecommendationResultHandler());
+                break;
+        }
+    }
+
+    private class RecommendationResultHandler implements Callback<List<String>> {
+        @Override
+        public void onResponse(Call<List<String>> call, Response<List<String>> response) {
+            List<String> careerNames = response.body();
+            ArrayList<String> careerArrayList = new ArrayList<>();
+
+            if(careerNames.size() == 0) {
+                Toast.makeText(Results.this, "No Recommendation found! Please navigate to the 'Recommendation' option on Main page and get your career recommendation", Toast.LENGTH_LONG).show();
+
+            } else if(careerNames.size() > 0) {
+                for(int i=0; i<careerNames.size(); i++) {
+                    careerArrayList.add(careerNames.get(i));
+                }
+                Intent intent = new Intent(Results.this, CareerRecommendFromResults.class);
+                intent.putStringArrayListExtra("recommendList", careerArrayList);
+                startActivity(intent);
+                finish();
+            }
+            loadingDialog.dismiss();
+        }
+        @Override
+        public void onFailure(Call<List<String>> call, Throwable t) {
+            Log.d("TAG","Error :"+t.getMessage());
+            loadingDialog.dismiss();
+            Toast.makeText(Results.this, "Error! No Internet..", Toast.LENGTH_LONG).show();
         }
     }
 

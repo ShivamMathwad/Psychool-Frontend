@@ -15,7 +15,7 @@ import com.aptitude.shivam.aptitude.Utils.MpagerAdapter;
 
 public class About extends AppCompatActivity {
 
-    int layouts[] = {R.layout.first_slide, R.layout.second_slide, R.layout.third_slide, R.layout.fourth_slide};
+    int layouts[] = {R.layout.first_slide, R.layout.third_slide, R.layout.fourth_slide};
     ViewPager viewPager;
     MpagerAdapter mpagerAdapter;
     LinearLayout dotsLayout;

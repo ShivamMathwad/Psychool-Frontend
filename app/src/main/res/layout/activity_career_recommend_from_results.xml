@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightBlue"
+    tools:context=".CareerRecommendFromResults">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="55dp"
+            android:text="Career Streams Best Suited For You"
+            android:textColor="@color/blackEngine"
+            android:textSize="22dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/careerCard1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginHorizontal="34dp"
+            android:layout_marginBottom="28dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="10dp">
+
+            <TextView
+                android:id="@+id/career1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="9dp"
+                android:text="Public &#38; Political Affairs"
+                android:textColor="@color/blackEngine"
+                android:textSize="19dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/careerCard2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/careerCard1"
+            android:layout_marginHorizontal="34dp"
+            android:layout_marginBottom="28dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="10dp">
+
+            <TextView
+                android:id="@+id/career2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="9dp"
+                android:text="Weather &#38; Environmental Sci."
+                android:textColor="@color/blackEngine"
+                android:textSize="19dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/careerCard3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/careerCard2"
+            android:layout_marginHorizontal="34dp"
+            android:layout_marginBottom="28dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="10dp">
+
+            <TextView
+                android:id="@+id/career3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="9dp"
+                android:text="Management"
+                android:textColor="@color/blackEngine"
+                android:textSize="19dp" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_below="@+id/careerCard3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:src="@mipmap/winner_image" />
+
+    </RelativeLayout>
+</ScrollView>

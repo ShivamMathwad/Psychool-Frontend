@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CareerRecommend"></activity>
+        <activity android:name=".CareerRecommendFromResults"></activity>
+        <activity android:name=".CareerDetails" />
+        <activity android:name=".CareerRecommend" />
         <activity android:name=".InterestResult" />
         <activity android:name=".InterestTestLayout" />
         <activity android:name=".PersonalityMain" />

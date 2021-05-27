@@ -14,10 +14,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="23dp"
-            android:text="Your Score"
+            android:layout_marginTop="20dp"
+            android:text="Your Interest Trait Score"
             android:textColor="@color/darkerGray"
-            android:textSize="25dp" />
+            android:textSize="24dp" />
 
         <RelativeLayout
             android:id="@+id/relative"
@@ -55,7 +55,7 @@
                 android:id="@+id/R_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/O_progressbar"
+                android:layout_alignBottom="@+id/R_progressbar"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="4dp"
                 android:background="@android:color/transparent"
@@ -253,6 +253,140 @@
                 android:text="60%"
                 android:textColor="@color/darkerGray"
                 android:textSize="19dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="30dp"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/R_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Realistic"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/R_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/R_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/I_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/R_description"
+                android:layout_marginTop="16dp"
+                android:text="2. Investigative"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/I_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/I_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/A_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/I_description"
+                android:layout_marginTop="16dp"
+                android:text="3. Artistic"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/A_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/A_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/S_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/A_description"
+                android:layout_marginTop="16dp"
+                android:text="4. Social"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/S_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/S_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/E_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/S_description"
+                android:layout_marginTop="16dp"
+                android:text="5. Enterprising"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/E_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/E_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/C_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/E_description"
+                android:layout_marginTop="16dp"
+                android:text="6. Conventional"
+                android:textColor="@color/darkerGray"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/C_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/C_title"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@color/darkerGray"
+                android:textSize="18dp"/>
+
         </RelativeLayout>
 
     </RelativeLayout>

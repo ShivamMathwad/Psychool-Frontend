@@ -107,43 +107,43 @@ public class TestChecklist extends AppCompatActivity implements View.OnClickList
             double numerical, perceptual, verbal, abstractApti, spatial;
 
             if(model.getNumerical()<=30){
-                numerical = 0.16;
+                numerical = 0.25;
             }else if(model.getNumerical()>30 && model.getNumerical()<=73){
                 numerical = 0.5;
             }else{
-                numerical = 0.88;
+                numerical = 0.75;
             }
 
             if(model.getPerceptual()<=40){
-                perceptual = 0.16;
+                perceptual = 0.25;
             }else if(model.getPerceptual()>40 && model.getPerceptual()<=83){
                 perceptual = 0.5;
             }else{
-                perceptual = 0.88;
+                perceptual = 0.75;
             }
 
             if(model.getVerbal()<=33){
-                verbal = 0.16;
+                verbal = 0.25;
             }else if(model.getVerbal()>33 && model.getVerbal()<=73){
                 verbal = 0.5;
             }else{
-                verbal = 0.88;
+                verbal = 0.75;
             }
 
             if(model.getAbstractApti()<=26){
-                abstractApti = 0.16;
+                abstractApti = 0.25;
             }else if(model.getAbstractApti()>26 && model.getAbstractApti()<=70){
                 abstractApti = 0.5;
             }else{
-                abstractApti = 0.88;
+                abstractApti = 0.75;
             }
 
             if(model.getSpatial()<=23){
-                spatial = 0.16;
+                spatial = 0.25;
             }else if(model.getSpatial()>23 && model.getSpatial()<=60){
                 spatial = 0.5;
             }else{
-                spatial = 0.88;
+                spatial = 0.75;
             }
 
             intent.putExtra("o_result",(model.getO_result()/100) );
