@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/career_name"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="28dp"
             android:text="Description:"
             android:textSize="18dp"
             android:textStyle="bold"
